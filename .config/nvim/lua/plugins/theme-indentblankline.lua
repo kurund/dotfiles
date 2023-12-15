@@ -1,0 +1,32 @@
+return {
+  -- Disabled 2023-11-16 because it slows things.
+  -- 'lukas-reineke/indent-blankline.nvim',
+  -- main = "ibl",
+  -- config = function()
+  --   local highlight = {
+  --     "Level1",
+  --     "Level2",
+  --     "Level3",
+  --     "Level4",
+  --     "Level5",
+  --   }
+  --
+  --   local hooks = require "ibl.hooks"
+  --   -- create the highlight groups in the highlight setup hook, so they are reset
+  --   -- every time the colorscheme changes
+  --   hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+  --     vim.api.nvim_set_hl(0, "Level1", { fg = "#2b2b3b" })
+  --     vim.api.nvim_set_hl(0, "Level2", { fg = "#313144" })
+  --     vim.api.nvim_set_hl(0, "Level3", { fg = "#404059" })
+  --     vim.api.nvim_set_hl(0, "Level4", { fg = "#484865" })
+  --     vim.api.nvim_set_hl(0, "Level5", { fg = "#555577" })
+  --     vim.api.nvim_set_hl(0, "Level6", { fg = "#6a6a95" })
+  --   end)
+  --
+  --   require('ibl').setup ({
+  --     scope = { show_start = false, show_end = false },
+  --     indent = { highlight = highlight }
+  --   })
+  --
+  -- end
+}

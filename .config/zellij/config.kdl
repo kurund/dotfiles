@@ -1,0 +1,12 @@
+// my configurations
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
+
+default_layout "dash"
+
+theme "gruvbox-dark"
+
