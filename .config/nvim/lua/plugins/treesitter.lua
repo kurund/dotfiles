@@ -11,6 +11,20 @@ return {
       "sql",
       "svelte",
       "http",
+      "bash",
+      "html",
+      "javascript",
+      "json",
+      "lua",
+      "markdown",
+      "markdown_inline",
+      "python",
+      "query",
+      "regex",
+      "tsx",
+      "typescript",
+      "vim",
+      "yaml",
     },
   },
   config = function(_, opts)
@@ -20,8 +34,12 @@ return {
     vim.filetype.add({
       extension = {
         mdx = "mdx",
+        module = "module",
+        inc = "php",
       },
     })
     vim.treesitter.language.register("markdown", "mdx")
+    vim.treesitter.language.register("php", "module")
+    vim.treesitter.language.register("php", "inc")
   end,
 }

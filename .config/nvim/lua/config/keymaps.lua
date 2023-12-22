@@ -2,9 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- local discipline = require("kurund.discipline")
--- discipline.cowboy()
-
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -46,3 +43,6 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
+
+-- Basic clipboard interaction - ctrl-c  = copy
+-- keymap.set({ "n", "x" }, "<C-c>", '"+y', { desc = "Clipboard copy" })
