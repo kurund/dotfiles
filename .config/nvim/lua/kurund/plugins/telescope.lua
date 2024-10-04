@@ -62,7 +62,37 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
         },
       },
-      -- pickers = {}
+      pickers = {
+        find_files = {
+          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+          hidden = true,
+        },
+        buffers = {
+          initial_mode = 'normal',
+          sort_lastused = true,
+          -- sort_mru = true,
+          mappings = {
+            n = {
+              ['d'] = actions.delete_buffer,
+              ['l'] = actions.select_default,
+            },
+          },
+        },
+      },
+      live_grep = {
+        file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+        additional_args = function(_)
+          return { '--hidden' }
+        end,
+      },
+      path_display = {
+        filename_first = {
+          reverse_directories = true,
+        },
+      },
+      git_files = {
+        previewer = false,
+      },
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
