@@ -1,8 +1,0 @@
-plugin
-lua/plugins/nvim-dap-local.lua
-test2
-#lua/code-dap-local.lua
-lua/local-db-connections.lua
-lazy-lock.json
-lazy-lock.json
-lua/plugins/utility-ghost.lua
