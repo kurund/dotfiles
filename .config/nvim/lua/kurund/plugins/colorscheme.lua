@@ -30,7 +30,7 @@ return {
     priority = 1000,
     config = function()
       local settransparancy = function()
-        if vim.loop.os_uname().sysname == 'Darwin' then
+        if (vim.uv or vim.loop).os_uname().sysname == 'Darwin' then
           return false
         end
         return true
@@ -49,7 +49,7 @@ return {
     name = 'rose-pine',
     config = function()
       local settransparancy = function()
-        if vim.loop.os_uname().sysname == 'Darwin' then
+        if (vim.uv or vim.loop).os_uname().sysname == 'Darwin' then
           return false
         end
         return true
