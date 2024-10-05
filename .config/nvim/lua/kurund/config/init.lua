@@ -13,6 +13,10 @@ require 'kurund.config.lazy'
 require 'kurund.config.autocommands'
 
 -- [[ set default colorschemes ]]
--- vim.cmd.colorscheme 'tokyonight-night'
--- vim.cmd.colorscheme 'nord'
-vim.cmd.colorscheme 'rose-pine'
+-- Available colorschemes:
+--  * 'tokyonight-night'
+--  * 'nord'
+--  * 'rose-pine'
+
+local env_var_nvim_theme = os.getenv 'NVIM_THEME' or 'tokyonight-night'
+vim.cmd.colorscheme(env_var_nvim_theme)
