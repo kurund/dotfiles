@@ -1,14 +1,12 @@
 layout {
   default_tab_template {
+    pane size=2 borderless=true {
+      plugin location="status-bar"
+    }
     pane split_direction="vertical" {
       pane {
         cwd "~/src"
       }
-    }
-
-    pane size=1 borderless=true {
-      plugin location="status-bar"
-      // plugin location="autolock"
     }
   }
 }
