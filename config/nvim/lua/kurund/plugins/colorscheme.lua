@@ -48,18 +48,11 @@ return {
     priority = 1000,
     name = 'rose-pine',
     config = function()
-      local settransparancy = function()
-        if (vim.uv or vim.loop).os_uname().sysname == 'Darwin' then
-          return false
-        end
-        return true
-      end
-
       require('rose-pine').setup {
         styles = {
           bold = true,
           italic = false,
-          transparent = settransparancy(),
+          transparent = true,
         },
       }
     end,
