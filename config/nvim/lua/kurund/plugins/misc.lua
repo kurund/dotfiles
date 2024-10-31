@@ -1,12 +1,12 @@
 return {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- better notification
-  {
-    'rcarriga/nvim-notify',
-    config = function()
-      vim.notify = require 'notify'
-    end,
-  },
+  -- {
+  --   'rcarriga/nvim-notify',
+  --   config = function()
+  --     vim.notify = require 'notify'
+  --   end,
+  -- },
 
   -- auto tag
   {

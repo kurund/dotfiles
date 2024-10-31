@@ -19,8 +19,8 @@ default_layout "dash"
 
 // configuring theme directory is bit hacky hence defining themes here
 // theme "gruvbox-dark"
-theme "tokyo-night-dark"
-// theme "catppuccin-mocha"
+// theme "tokyo-night-dark"
+theme "catppuccin-mocha"
 
 themes {
     catppuccin-mocha {
