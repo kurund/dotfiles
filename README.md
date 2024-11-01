@@ -3,4 +3,3 @@
 - NeoVim
 - Zellij
 - Wezterm
-- zsh
