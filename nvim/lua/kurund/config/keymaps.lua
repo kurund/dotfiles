@@ -73,6 +73,7 @@ keymap.set('v', '>', '>gv', opts)
 
 -- Window management
 keymap.set('n', 'sv', '<C-w>v', opts) -- split window vertically
-keymap.set('n', 'sh', '<C-w>s', opts) -- split window horizontally
+-- TODO: This confilict with mini surround
+-- keymap.set('n', 'sh', '<C-w>s', opts) -- split window horizontally
 keymap.set('n', 'se', '<C-w>=', opts) -- make split windows equal width & height
 keymap.set('n', 'xs', ':close<CR>', opts) -- close current split window
