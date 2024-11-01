@@ -17,6 +17,7 @@ require 'kurund.config.autocommands'
 --  * 'tokyonight-night'
 --  * 'nord'
 --  * 'rose-pine'
+--  * 'catppuccin'
 
 local env_var_nvim_theme = os.getenv 'NVIM_THEME' or 'tokyonight-night'
 vim.cmd.colorscheme(env_var_nvim_theme)
