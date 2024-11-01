@@ -12,9 +12,9 @@ return {
 	-- macos_window_background_blur = 30,
 
 	-- window_background_opacity = 1,
-	window_background_opacity = 0.92,
+	window_background_opacity = 0.95,
 	-- window_background_opacity = 0.78,
-	window_decorations = "RESIZE",
+	-- window_decorations = "RESIZE",
 	keys = {
 		{
 			key = "f",
