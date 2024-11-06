@@ -4,7 +4,7 @@ return {
 	-- color_scheme = "Tokyo Night",
 	-- color_scheme = "rose-pine",
 	enable_tab_bar = false,
-	font_size = 18.0,
+	font_size = 19.0,
 	font = wezterm.font("Dank Mono"),
 	-- font = wezterm.font("JetBrains Mono"),
 

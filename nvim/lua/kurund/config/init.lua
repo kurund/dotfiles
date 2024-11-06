@@ -1,6 +1,6 @@
 -- set basic config
-require 'kurund.config.options'
 require 'kurund.config.keymaps'
+require 'kurund.config.options'
 
 -- [[ Custom Settings ]]
 -- define default php standard, Drupal in this case means CiviCRM
