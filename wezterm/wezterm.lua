@@ -14,7 +14,7 @@ return {
 	-- window_background_opacity = 1,
 	window_background_opacity = 0.95,
 	-- window_background_opacity = 0.78,
-	-- window_decorations = "RESIZE",
+	window_decorations = "RESIZE",
 	keys = {
 		{
 			key = "f",
