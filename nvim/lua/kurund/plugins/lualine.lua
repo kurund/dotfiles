@@ -2,6 +2,7 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
+    -- function to display the formatter for the buffer
     local current_formatter = function()
       -- Check if 'conform' is available
       local status, conform = pcall(require, 'conform')
@@ -35,7 +36,6 @@ return {
     end
 
     require('lualine').setup {
-
       options = {
         icons_enabled = true,
         theme = 'auto',
