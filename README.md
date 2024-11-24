@@ -1,5 +1,10 @@
 ## This repo contains few of my dot files
 
-- NeoVim
-- Zellij
-- Wezterm
+- NeoVim editor
+- Zellij multiplexer
+- Wezterm terminal
+- Tmux multiplexer
+- Kitty terminal
+- Alacritty terminal
+- Starship shell prompt
+- Hyperland and related configs
