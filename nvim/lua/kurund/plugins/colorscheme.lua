@@ -5,7 +5,7 @@ return {
     lazy = false,
     config = function()
       require('themery').setup {
-        themes = { 'tokyonight', 'nord', 'rose-pine', 'catppuccin', 'onedark' }, -- Your list of installed colorschemes.
+        themes = { 'tokyonight', 'nord', 'rose-pine', 'catppuccin', 'onedark', 'bearded-theme' }, -- Your list of installed colorschemes.
         livePreview = true, -- Apply theme while picking. Default to true.
       }
     end,
@@ -56,5 +56,11 @@ return {
         style = 'darker',
       }
     end,
+  },
+
+  {
+    'xStormyy/bearded-theme.nvim',
+    name = 'bearded-theme',
+    priority = 1000,
   },
 }
