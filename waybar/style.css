@@ -113,14 +113,14 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #taskbar {
-  background: @backgrounddark;
+  background: @backgroundlight;
   margin: 5px 15px;
   padding: 1px;
   border-radius: 15px;
   font-weight: normal;
   font-style: normal;
   opacity: 0.8;
-  border: 1px solid @backgrounddark;
+  border: 1px solid @backgroundlight;
 }
 
 #taskbar button {
