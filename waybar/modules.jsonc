@@ -39,7 +39,7 @@
   "clock": {
     "format": "{:%a %b %d, %H:%M:%S (%Z)}",
     "tooltip-format": "{tz_list}",
-    "timezones": ["Etc/UTC", "Asia/Calcutta", "America/Los_Angeles"],
+    "timezones": ["Europe/London", "Asia/Calcutta", "America/Los_Angeles"],
     "on-click": "gnome-calendar",
   },
 
