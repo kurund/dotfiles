@@ -1,5 +1,5 @@
     # Toggle Hyprshade based on the selected filter
-    hyprshade_filter="blue-light-filter-50"
+    hyprshade_filter="blue-light-filter"
 
     # Toggle Hyprshade
     if [ "$hyprshade_filter" != "off" ] ;then
