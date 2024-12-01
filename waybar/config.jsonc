@@ -32,7 +32,7 @@
     "tray",
     "hyprland/language",
     "custom/hyprshade",
-    "custom/exit",
     "clock",
+    "custom/exit",
   ],
 }
