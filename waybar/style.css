@@ -18,22 +18,23 @@ window#waybar {
 }
 
 #workspaces {
+  /* border-radius: 1rem; */
+  margin: 0px 4px;
+  color: @text;
+  background: @surface0;
   border-radius: 1rem;
-  margin: 4px;
 }
 
 #workspaces button {
-  border: 1px solid @peach;
-  border-radius: 1rem;
-  margin: 4px;
   transition: all 0.3s ease-in-out;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 #workspaces button.active {
-  color: @yellow;
+  color: @crust;
+  background: @lavender;
   border-radius: 1rem;
-  min-width: 40px;
+  min-width: 30px;
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
