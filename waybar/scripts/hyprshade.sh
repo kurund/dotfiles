@@ -5,7 +5,8 @@
     if [ "$hyprshade_filter" != "off" ] ;then
         if [ -z $(hyprshade current) ] ;then
             echo ":: hyprshade is not running"
-            hyprshade on $hyprshade_filter
+            # hyprshade on $hyprshade_filter
+            hyprshade auto
             notify-send "Hyprshade activated" "with $(hyprshade current)"
             echo ":: hyprshade started with $(hyprshade current)"
         else
