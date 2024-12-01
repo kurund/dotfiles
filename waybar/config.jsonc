@@ -13,7 +13,8 @@
   // Modules Left
   "modules-left": [
     "custom/empty",
-    "wlr/taskbar",
+    "cpu",
+    "memory",
     "hyprland/window",
     "custom/empty",
   ],
@@ -29,8 +30,8 @@
     "battery",
     "network",
     "tray",
-    "group/hardware",
-    "group/tools",
+    "hyprland/language",
+    "custom/hyprshade",
     "custom/exit",
     "clock",
   ],

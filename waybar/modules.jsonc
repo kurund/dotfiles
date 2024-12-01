@@ -111,13 +111,13 @@
 
   // CPU
   "cpu": {
-    "format": "/ C {usage}% ",
+    "format": " {usage}% ",
     "on-click": "kitty -e htop",
   },
 
   // Memory
   "memory": {
-    "format": "/ M {}% ",
+    "format": " {}% ",
     "on-click": "kitty -e htop",
   },
 
@@ -130,7 +130,7 @@
   },
 
   "hyprland/language": {
-    "format": "/ K {short}",
+    "format": " {short}",
   },
 
   // Group Hardware
@@ -147,7 +147,7 @@
   // Network
   "network": {
     "format": "{ifname}",
-    "format-wifi": "   {signalStrength}%",
+    "format-wifi": " ",
     "format-ethernet": "  {ifname}",
     "format-disconnected": "Disconnected",
     "tooltip-format": " {ifname} via {gwaddri}",
@@ -177,7 +177,7 @@
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
@@ -197,7 +197,7 @@
 
   // Bluetooth
   "bluetooth": {
-    "format": " ",
+    "format": "",
     "format-disabled": "",
     "format-off": "",
     "interval": 30,
