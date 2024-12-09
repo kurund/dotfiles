@@ -2,7 +2,7 @@
 
 * {
   font-family: "JetBrains Mono Nerd Font", "Font Awesome 6 Free";
-  font-size: 0.8rem;
+  /* font-size: 0.7rem; */
   min-height: 0;
 }
 
@@ -13,35 +13,50 @@ window#waybar {
   transition-duration: 0.5s;
   /* border: 1px solid @blue; */
   /* border-radius: 1rem; */
-  margin: 0;
+  margin: 0 10px;
   padding: 0;
+  font-size: 0.6rem;
+}
+
+.modules-left {
+  font-size: 0.8rem;
+  background: @crust;
+  border-radius: 1rem;
+}
+
+.modules-right {
+  font-size: 0.8rem;
+  background: @crust;
+  border-radius: 1rem;
+  padding: 0 10px;
 }
 
 #workspaces {
-  /* border-radius: 1rem; */
-  margin: 0px 4px;
-  color: @text;
-  background: @surface0;
   border-radius: 1rem;
+  margin: 0px 4px;
+  background: @crust;
 }
 
 #workspaces button {
   transition: all 0.3s ease-in-out;
   opacity: 0.5;
+  color: @rosewater;
+  font-weight: 900;
 }
 
 #workspaces button.active {
   color: @crust;
-  background: @lavender;
+  background: @mauve;
   border-radius: 1rem;
-  min-width: 30px;
+  /* min-width: 30px; */
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1rem;
+  color: @mauve;
+  background: @crust;
+  /* border-radius: 1rem; */
 }
 
 #custom-empty,
@@ -73,7 +88,7 @@ window#waybar {
 }
 
 #custom-media {
-  color: @mauve;
+  color: @peach;
 }
 
 #pulseaudio {
