@@ -5,7 +5,7 @@ return {
     lazy = false,
     config = function()
       require('themery').setup {
-        themes = { 'tokyonight', 'nord', 'rose-pine', 'catppuccin', 'onedark', 'bearded-theme', 'oxocarbon' }, -- Your list of installed colorschemes.
+        themes = { 'tokyonight', 'rose-pine', 'catppuccin', 'onedark', 'bearded-theme', 'oxocarbon' }, -- Your list of installed colorschemes.
         livePreview = true, -- Apply theme while picking. Default to true.
       }
     end,
@@ -19,12 +19,15 @@ return {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
     priority = 1000, -- Make sure to load this before all the other start plugins.
-  },
-
-  {
-    'gbprod/nord.nvim',
-    name = 'nord',
-    priority = 1000,
+    config = function()
+      require('tokyonight').setup {
+        transparent = true,
+        styles = {
+          sidebars = 'transparent',
+          floats = 'transparent',
+        },
+      }
+    end,
   },
 
   {
@@ -63,6 +66,7 @@ return {
     name = 'bearded-theme',
     priority = 1000,
   },
+
   {
     'nyoom-engineering/oxocarbon.nvim',
     name = 'oxocarbon',

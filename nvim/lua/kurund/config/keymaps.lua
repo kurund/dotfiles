@@ -64,8 +64,9 @@ keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 -- Buffers
 keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts) -- close buffer
-keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
+-- TODO: This conflicts with Debug and Trouble
+-- keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts) -- close buffer
+-- keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Stay in indent mode
 keymap.set('v', '<', '<gv', opts)
