@@ -57,6 +57,11 @@ return {
     config = function()
       require('onedark').setup {
         style = 'darker',
+        colors = {
+          black = '#000000',
+          bg0 = '#0a0a0a',
+          bg1 = '#222120',
+        },
       }
     end,
   },
