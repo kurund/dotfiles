@@ -24,6 +24,7 @@
 
   // Modules Right
   "modules-right": [
+    "custom/empty",
     "custom/media",
     "pulseaudio",
     "bluetooth",
@@ -34,5 +35,6 @@
     "custom/hyprshade",
     "clock",
     "custom/exit",
+    "custom/empty",
   ],
 }

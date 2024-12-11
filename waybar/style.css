@@ -18,21 +18,13 @@ window#waybar {
   font-size: 0.6rem;
 }
 
-.modules-left {
-  font-size: 0.8rem;
-  background: @crust;
-  border-radius: 1rem;
-}
-
+.modules-left,
 .modules-right {
   font-size: 0.8rem;
-  background: @crust;
-  border-radius: 1rem;
-  padding: 0 10px;
 }
 
 #workspaces {
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   margin: 0px 4px;
   background: @crust;
 }
@@ -46,8 +38,8 @@ window#waybar {
 
 #workspaces button.active {
   color: @crust;
-  background: @mauve;
-  border-radius: 1rem;
+  background: @peach;
+  border-radius: 0.7rem;
   /* min-width: 30px; */
   transition: all 0.3s ease-in-out;
   opacity: 1;
@@ -73,6 +65,11 @@ window#waybar {
 #clock,
 #window {
   padding: 0 0.5rem;
+  background: @crust;
+  border-radius: 0.7rem;
+  /* border-bottom: 0.5px dotted @peach; */
+  /* border-left: 0.5px dotted @peach; */
+  margin: 0 3px;
 }
 
 #cpu {
@@ -84,11 +81,12 @@ window#waybar {
 }
 
 #window {
-  color: @flamingo;
+  color: @peach;
+  /* background: @yellow; */
 }
 
 #custom-media {
-  color: @peach;
+  color: @mauve;
 }
 
 #pulseaudio {

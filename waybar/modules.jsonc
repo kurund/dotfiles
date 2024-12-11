@@ -111,20 +111,20 @@
 
   // CPU
   "cpu": {
-    "format": " {usage}% ",
+    "format": " {usage}%",
     "on-click": "kitty -e htop",
   },
 
   // Memory
   "memory": {
-    "format": " {}% ",
+    "format": " {}%",
     "on-click": "kitty -e htop",
   },
 
   // Harddisk space used
   "disk": {
     "interval": 30,
-    "format": "D {percentage_used}% ",
+    "format": "D {percentage_used}%",
     "path": "/",
     "on-click": "kitty -e htop",
   },
