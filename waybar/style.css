@@ -81,8 +81,8 @@ window#waybar {
 }
 
 #window {
-  color: @peach;
-  /* background: @yellow; */
+  color: @crust;
+  background: @green;
 }
 
 #custom-media {
