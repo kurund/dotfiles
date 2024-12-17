@@ -253,4 +253,13 @@
     "on-scroll-down": "playerctl previous",
     "exec": "~/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
   },
+
+  // weather
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/get_weather.sh Exeter",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+  },
 }
