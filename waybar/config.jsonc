@@ -33,6 +33,7 @@
     "tray",
     "hyprland/language",
     "custom/hyprshade",
+    "idle_inhibitor",
     "clock",
     "custom/exit",
     "custom/empty",
