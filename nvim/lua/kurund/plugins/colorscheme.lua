@@ -5,7 +5,15 @@ return {
     lazy = false,
     config = function()
       require('themery').setup {
-        themes = { 'tokyonight', 'rose-pine', 'catppuccin', 'onedark', 'bearded-theme', 'oxocarbon' }, -- Your list of installed colorschemes.
+        themes = {
+          'tokyonight',
+          'rose-pine',
+          'catppuccin',
+          'onedark',
+          'bearded-theme',
+          'oxocarbon',
+          'solarized-osaka',
+        }, -- Your list of installed colorschemes.
         livePreview = true, -- Apply theme while picking. Default to true.
       }
     end,
@@ -76,5 +84,18 @@ return {
     'nyoom-engineering/oxocarbon.nvim',
     name = 'oxocarbon',
     priority = 1000,
+  },
+
+  {
+    'craftzdog/solarized-osaka.nvim',
+    name = 'solarized-osaka',
+    priority = 1000,
+    config = function()
+      require('solarized-osaka').setup {
+        transparent = false,
+        on_colors = function(colors) end,
+        on_highlights = function(highlights, colors) end,
+      }
+    end,
   },
 }
