@@ -13,6 +13,8 @@ return {
           'bearded-theme',
           'oxocarbon',
           'solarized-osaka',
+          'gruvbox-material',
+          'mango',
         }, -- Your list of installed colorschemes.
         livePreview = true, -- Apply theme while picking. Default to true.
       }
@@ -97,5 +99,11 @@ return {
         on_highlights = function(highlights, colors) end,
       }
     end,
+  },
+
+  {
+    'sainnhe/gruvbox-material',
+    name = 'gruvbox-material',
+    priority = 1000,
   },
 }
