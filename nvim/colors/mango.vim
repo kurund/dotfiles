@@ -1,76 +1,82 @@
-hi clear
-syntax reset
-let g:colors_name = "mango"
+" Name: mango
+" Description: "mango" stands for my favorite fruit :)
+" Author: Kurund Jalmi ( This is inspired by Industry vim color scheme)
+
 set background=dark
+hi clear
+let g:colors_name = "mango"
 set t_Co=256
-hi Normal guifg=#f1ea8c ctermbg=NONE guibg=#0e0d0d gui=NONE
 
-hi DiffText guifg=#f5a623 guibg=NONE
-hi ErrorMsg guifg=#f5a623 guibg=NONE
-hi WarningMsg guifg=#f5a623 guibg=NONE
-hi PreProc guifg=#f5a623 guibg=NONE
-hi Exception guifg=#f5a623 guibg=NONE
-hi Error guifg=#f5a623 guibg=NONE
-hi DiffDelete guifg=#f5a623 guibg=NONE
-hi GitGutterDelete guifg=#f5a623 guibg=NONE
-hi GitGutterChangeDelete guifg=#f5a623 guibg=NONE
-hi cssIdentifier guifg=#f5a623 guibg=NONE
-hi cssImportant guifg=#f5a623 guibg=NONE
-hi Type guifg=#f5a623 guibg=NONE
-hi Identifier guifg=#f5a623 guibg=NONE
-hi PMenuSel guifg=#f6c48e guibg=NONE
-hi Constant guifg=#f6c48e guibg=NONE
-hi Repeat guifg=#f6c48e guibg=NONE
-hi DiffAdd guifg=#f6c48e guibg=NONE
-hi GitGutterAdd guifg=#f6c48e guibg=NONE
-hi cssIncludeKeyword guifg=#f6c48e guibg=NONE
-hi Keyword guifg=#f6c48e guibg=NONE
-hi IncSearch guifg=#d24fec guibg=NONE
-hi Title guifg=#d24fec guibg=NONE
-hi PreCondit guifg=#d24fec guibg=NONE
-hi Debug guifg=#d24fec guibg=NONE
-hi SpecialChar guifg=#d24fec guibg=NONE
-hi Conditional guifg=#d24fec guibg=NONE
-hi Todo guifg=#d24fec guibg=NONE
-hi Special guifg=#d24fec guibg=NONE
-hi Label guifg=#d24fec guibg=NONE
-hi Delimiter guifg=#d24fec guibg=NONE
-hi Number guifg=#d24fec guibg=NONE
-hi CursorLineNR guifg=#d24fec guibg=NONE
-hi Define guifg=#d24fec guibg=NONE
-hi MoreMsg guifg=#d24fec guibg=NONE
-hi Tag guifg=#d24fec guibg=NONE
-hi String guifg=#d24fec guibg=NONE
-hi MatchParen guifg=#d24fec guibg=NONE
-hi Macro guifg=#d24fec guibg=NONE
-hi DiffChange guifg=#d24fec guibg=NONE
-hi GitGutterChange guifg=#d24fec guibg=NONE
-hi cssColor guifg=#d24fec guibg=NONE
-hi Function guifg=#73a53c guibg=NONE
-hi Directory guifg=#4a90e2 guibg=NONE
-hi markdownLinkText guifg=#4a90e2 guibg=NONE
-hi javaScriptBoolean guifg=#4a90e2 guibg=NONE
-hi Include guifg=#4a90e2 guibg=NONE
-hi Storage guifg=#4a90e2 guibg=NONE
-hi cssClassName guifg=#4a90e2 guibg=NONE
-hi cssClassNameDot guifg=#4a90e2 guibg=NONE
-hi Statement guifg=#7ed321 guibg=NONE
-hi Operator guifg=#7ed321 guibg=NONE
-hi cssAttr guifg=#7ed321 guibg=NONE
+hi Normal guifg=#dadada guibg=#000000 gui=NONE cterm=NONE
+hi EndOfBuffer guifg=#444444 guibg=#000000 gui=NONE cterm=NONE
+hi StatusLine guifg=#000000 guibg=#dadada gui=bold cterm=bold
+hi StatusLineNC guifg=#000000 guibg=#6c6c6c gui=NONE cterm=NONE
+hi StatusLineTerm guifg=#000000 guibg=#EB5757 gui=bold cterm=bold
+hi StatusLineTermNC guifg=#000000 guibg=#5fd75f gui=NONE cterm=NONE
+hi VertSplit guifg=#000000 guibg=#6c6c6c gui=NONE cterm=NONE
+hi Pmenu guifg=#dadada guibg=#000000 gui=NONE cterm=NONE
+hi PmenuSel guifg=#000000 guibg=#ffff00 gui=NONE cterm=NONE
+hi PmenuSbar guifg=NONE guibg=#000000 gui=NONE cterm=NONE
+hi PmenuThumb guifg=NONE guibg=#6c6c6c gui=NONE cterm=NONE
+hi TabLine guifg=#dadada guibg=#444444 gui=NONE cterm=NONE
+hi TabLineFill guifg=NONE guibg=#6c6c6c gui=NONE cterm=NONE
+hi TabLineSel guifg=#ffffff guibg=#000000 gui=bold cterm=bold
+hi ToolbarButton guifg=#dadada guibg=#6c6c6c gui=bold cterm=bold
+hi ToolbarLine guifg=NONE guibg=#303030 gui=NONE cterm=NONE
+hi NonText guifg=#02b7e4 guibg=NONE gui=NONE cterm=NONE
+hi SpecialKey guifg=#02b7e4 guibg=NONE gui=NONE cterm=NONE
+hi Folded guifg=#02b7e4 guibg=#303030 gui=NONE cterm=NONE
+hi Visual guifg=#dadada guibg=#6c6c6c gui=NONE cterm=NONE
+hi CursorLine guifg=NONE guibg=#6c6c6c gui=NONE cterm=NONE
+hi CursorColumn guifg=NONE guibg=#6c6c6c gui=NONE cterm=NONE
+hi CursorLineNr guifg=#ffff00 guibg=NONE gui=bold cterm=bold
+hi ColorColumn guifg=NONE guibg=#444444 gui=NONE cterm=NONE
+hi QuickFixLine guifg=#000000 guibg=#fabf46 gui=NONE cterm=NONE
+hi VisualNOS guifg=#dadada guibg=#6c6c6c gui=NONE cterm=NONE
+hi LineNr guifg=#ffff00 guibg=NONE gui=NONE cterm=NONE
+hi FoldColumn guifg=#02b7e4 guibg=NONE gui=NONE cterm=NONE
+hi SignColumn guifg=#02b7e4 guibg=NONE gui=NONE cterm=NONE
+hi Underlined guifg=#87afff guibg=NONE gui=underline cterm=underline
+hi Error guifg=#ffffff guibg=#ff0000 gui=NONE cterm=NONE
+hi ErrorMsg guifg=#ffffff guibg=#ff0000 gui=NONE cterm=NONE
+hi ModeMsg guifg=#ffffff guibg=NONE gui=bold cterm=bold
+hi WarningMsg guifg=#ff0000 guibg=NONE gui=bold cterm=bold
+hi MoreMsg guifg=#5fd75f guibg=NONE gui=bold cterm=bold
+hi Question guifg=#EB5757 guibg=NONE gui=bold cterm=bold
+hi Todo guifg=#005fff guibg=#ffff00 gui=NONE cterm=NONE
+hi MatchParen guifg=#303030 guibg=#afaf00 gui=NONE cterm=NONE
+hi Search guifg=#000000 guibg=#ffff00 gui=NONE cterm=NONE
+hi IncSearch guifg=#000000 guibg=#EB5757 gui=NONE cterm=NONE
+hi WildMenu guifg=#000000 guibg=#ffff00 gui=NONE cterm=NONE
+hi Cursor guifg=#000000 guibg=#dadada gui=NONE cterm=NONE
+hi lCursor guifg=#000000 guibg=#ff0000 gui=NONE cterm=NONE
+hi SpellBad guifg=#ff0000 guibg=NONE guisp=#ff0000 gui=undercurl cterm=underline
+hi SpellCap guifg=#005fff guibg=NONE guisp=#005fff gui=undercurl cterm=underline
+hi SpellLocal guifg=#fabf46 guibg=NONE guisp=#fabf46 gui=undercurl cterm=underline
+hi SpellRare guifg=#EB5757 guibg=NONE guisp=#EB5757 gui=undercurl cterm=underline
+hi Comment guifg=#02b7e4 guibg=NONE gui=NONE cterm=NONE
+hi Identifier guifg=#fabf46 guibg=NONE gui=NONE cterm=NONE
+hi Function guifg=#EB5757 guibg=NONE gui=NONE cterm=NONE
+hi Statement guifg=#ffffff guibg=NONE gui=bold cterm=bold
+hi Constant guifg=#00ffff guibg=NONE gui=NONE cterm=NONE
+hi PreProc guifg=#ffff00 guibg=NONE gui=NONE cterm=NONE
+hi Type guifg=#EB5757 guibg=NONE gui=bold cterm=bold
+hi Special guifg=#c675ef guibg=NONE gui=NONE cterm=NONE
+hi Delimiter guifg=#ffff00 guibg=NONE gui=NONE cterm=NONE
+hi Directory guifg=#00ffff guibg=NONE gui=NONE cterm=NONE
+hi Conceal guifg=#6c6c6c guibg=NONE gui=NONE cterm=NONE
+hi Ignore guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi Title guifg=#fabf46 guibg=NONE gui=bold cterm=bold
+hi! link Terminal Normal
+hi! link LineNrAbove LineNr
+hi! link LineNrBelow LineNr
+hi! link CurSearch Search
+hi! link CursorLineFold CursorLine
+hi! link CursorLineSign CursorLine
+hi! link MessageWindow Pmenu
+hi! link PopupNotification Todo
+hi DiffAdd guifg=#ffffff guibg=#5f875f gui=NONE cterm=NONE
+hi DiffChange guifg=#ffffff guibg=#5f87af gui=NONE cterm=NONE
+hi DiffText guifg=#000000 guibg=#c6c6c6 gui=NONE cterm=NONE
+hi DiffDelete guifg=#ffffff guibg=#af5faf gui=NONE cterm=NONE
 
-
-hi Pmenu guifg=#f1ea8c guibg=#161616
-hi SignColumn guibg=#0e0d0d
-hi Title guifg=#f1ea8c
-hi LineNr guifg=#9e9413 guibg=#0e0d0d
-hi NonText guifg=#d09dff guibg=#0e0d0d
-hi Comment guifg=#d09dff gui=italic
-hi SpecialComment guifg=#d09dff gui=italic guibg=NONE
-hi CursorLine guibg=#161616
-hi TabLineFill gui=NONE guibg=#161616
-hi TabLine guifg=#9e9413 guibg=#161616 gui=NONE
-hi StatusLine gui=bold guibg=#161616 guifg=#f1ea8c
-hi StatusLineNC gui=NONE guibg=#0e0d0d guifg=#f1ea8c
-hi Search guibg=#d09dff guifg=#f1ea8c
-hi VertSplit gui=NONE guifg=#161616 guibg=NONE
-hi Visual gui=NONE guibg=#161616
