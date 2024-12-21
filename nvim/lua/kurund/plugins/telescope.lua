@@ -50,6 +50,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         find_files = {
           file_ignore_patterns = { 'node_modules', '.git', '.venv' },
           hidden = true,
+          previewer = false,
         },
         buffers = {
           initial_mode = 'normal',
@@ -61,6 +62,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
               ['l'] = actions.select_default,
             },
           },
+          previewer = false,
         },
       },
       live_grep = {
