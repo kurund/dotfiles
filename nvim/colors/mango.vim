@@ -1,13 +1,13 @@
 " Name: mango
 " Description: "mango" stands for my favorite fruit :)
-" Author: Kurund Jalmi ( This is inspired by Industry vim color scheme)
+" Author: Kurund Jalmi (This is inspired by Industry vim color scheme)
 
 set background=dark
 hi clear
 let g:colors_name = "mango"
 set t_Co=256
 
-hi Normal guifg=#dadada guibg=#000000 gui=NONE cterm=NONE
+hi Normal guifg=#dadada guibg=#0c0f11 gui=NONE cterm=NONE
 hi EndOfBuffer guifg=#444444 guibg=#000000 gui=NONE cterm=NONE
 hi StatusLine guifg=#000000 guibg=#dadada gui=bold cterm=bold
 hi StatusLineNC guifg=#000000 guibg=#6c6c6c gui=NONE cterm=NONE
