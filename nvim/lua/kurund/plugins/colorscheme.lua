@@ -10,10 +10,8 @@ return {
           'rose-pine',
           'catppuccin',
           'onedark',
-          'bearded-theme',
           'oxocarbon',
           'solarized-osaka',
-          'gruvbox-material',
           'mango',
         }, -- Your list of installed colorschemes.
         livePreview = true, -- Apply theme while picking. Default to true.
