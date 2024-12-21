@@ -78,3 +78,7 @@ keymap.set('n', 'sv', '<C-w>v', opts) -- split window vertically
 -- keymap.set('n', 'sh', '<C-w>s', opts) -- split window horizontally
 keymap.set('n', 'se', '<C-w>=', opts) -- make split windows equal width & height
 keymap.set('n', 'xs', ':close<CR>', opts) -- close current split window
+
+-- quick fix navigation
+keymap.set('n', '<M-j>', '<cmd>cnext<CR>')
+keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
