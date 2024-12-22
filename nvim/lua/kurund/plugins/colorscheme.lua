@@ -6,13 +6,14 @@ return {
     config = function()
       require('themery').setup {
         themes = {
-          'tokyonight',
-          'rose-pine',
           'catppuccin',
+          'lackluster-hack',
+          'mango',
           'onedark',
           'oxocarbon',
+          'rose-pine',
           'solarized-osaka',
-          'mango',
+          'tokyonight',
         }, -- Your list of installed colorschemes.
         livePreview = true, -- Apply theme while picking. Default to true.
       }
@@ -191,5 +192,11 @@ return {
         on_highlights = function(highlights, colors) end,
       }
     end,
+  },
+
+  {
+    'slugbyte/lackluster.nvim',
+    name = 'lackluster-hack',
+    priority = 1000,
   },
 }
