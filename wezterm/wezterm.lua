@@ -6,7 +6,8 @@ return {
 	enable_tab_bar = false,
 	font_size = 18.0,
 	-- font = wezterm.font("Dank Mono"),
-	font = wezterm.font("JetBrains Mono"),
+	-- font = wezterm.font("JetBrains Mono"),
+	font = wezterm.font("Iosevka"),
 
 	macos_window_background_blur = 40,
 	-- macos_window_background_blur = 30,
