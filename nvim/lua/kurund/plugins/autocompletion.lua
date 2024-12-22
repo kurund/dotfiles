@@ -109,6 +109,13 @@ return { -- Autocompletion
         { name = 'luasnip' },
         { name = 'path' },
       },
+      formatting = {
+        expandable_indicator = true,
+        fields = { 'menu', 'abbr', 'kind' },
+        format = function(entry, item)
+          return require('nvim-highlight-colors').format(entry, item)
+        end,
+      },
     }
   end,
 }

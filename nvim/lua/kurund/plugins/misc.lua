@@ -12,12 +12,12 @@ return {
   { 'famiu/bufdelete.nvim' },
 
   -- high-performance color highlighter
-  {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end,
-  },
+  -- {
+  --   'norcalli/nvim-colorizer.lua',
+  --   config = function()
+  --     require('colorizer').setup()
+  --   end,
+  -- },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
