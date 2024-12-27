@@ -1,3 +1,5 @@
-font-family = CommitMono
 window-decoration = false
 theme = Oxocarbon 
+
+background-opacity = 0.85
+background-blur-radius = 20
