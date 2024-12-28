@@ -16,6 +16,10 @@ local opts = { noremap = true, silent = true }
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
+-- Increment or decrement
+keymap.set('n', '+', '<C-a>')
+keymap.set('n', '-', '<C-x>')
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -62,20 +66,24 @@ keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
 keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 
 -- Buffers
-keymap.set('n', '<Tab>', ':bnext<CR>', opts)
-keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
+-- keymap.set('n', '<Tab>', ':bnext<CR>', opts)
+-- keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
 -- TODO: This conflicts with Debug and Trouble
 -- keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts) -- close buffer
 -- keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
+
+-- Tabs
+keymap.set('n', 'te', ':tabedit', opts)
+keymap.set('n', '<tab>', ':tabnext<Return>', opts)
+keymap.set('n', '<s-tab>', ':tabprev<Return>', opts)
 
 -- Stay in indent mode
 keymap.set('v', '<', '<gv', opts)
 keymap.set('v', '>', '>gv', opts)
 
 -- Window management
-keymap.set('n', 'sv', '<C-w>v', opts) -- split window vertically
--- TODO: This confilict with mini surround
--- keymap.set('n', 'sh', '<C-w>s', opts) -- split window horizontally
+keymap.set('n', 'ss', ':split<Return>', opts) -- split window horizontally
+keymap.set('n', 'sv', ':vsplit<Return>', opts) -- split window vertically
 keymap.set('n', 'se', '<C-w>=', opts) -- make split windows equal width & height
 keymap.set('n', 'xs', ':close<CR>', opts) -- close current split window
 
