@@ -65,13 +65,6 @@ keymap.set('n', '<Down>', ':resize +2<CR>', opts)
 keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
 keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 
--- Buffers
--- keymap.set('n', '<Tab>', ':bnext<CR>', opts)
--- keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
--- TODO: This conflicts with Debug and Trouble
--- keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts) -- close buffer
--- keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
-
 -- Tabs
 keymap.set('n', 'te', ':tabedit', opts)
 keymap.set('n', '<tab>', ':tabnext<Return>', opts)

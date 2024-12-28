@@ -1,10 +1,16 @@
 ## This repo contains few of my dot files
 
+### Current setup
+
 - NeoVim editor
-- Zellij multiplexer
-- Wezterm terminal
 - Tmux multiplexer
-- Kitty terminal
-- Alacritty terminal
+- Ghostty terminal
 - Starship shell prompt
 - Hyperland and related configs
+
+### Past configs
+
+- Zellij multiplexer
+- Kitty terminal
+- Wezterm terminal
+- Alacritty terminal

@@ -1,5 +1,6 @@
 return {
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
 
   -- auto tag
   {
@@ -8,18 +9,8 @@ return {
     config = true,
   },
 
-  -- buffer delete
-  { 'famiu/bufdelete.nvim' },
-
-  -- high-performance color highlighter
-  -- {
-  --   'norcalli/nvim-colorizer.lua',
-  --   config = function()
-  --     require('colorizer').setup()
-  --   end,
-  -- },
-
-  { -- Collection of various small independent plugins/modules
+  -- Collection of various small independent plugins/modules
+  {
     'echasnovski/mini.nvim',
     config = function()
       -- Better Around/Inside textobjects
