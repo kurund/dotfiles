@@ -59,7 +59,7 @@ return {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename' },
-        lualine_x = { 'encoding', current_formatter, 'filetype' },
+        lualine_x = { 'copilot', 'encoding', current_formatter, 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
