@@ -59,7 +59,17 @@ return {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename' },
-        lualine_x = { 'copilot', 'encoding', current_formatter, 'filetype' },
+        lualine_x = {
+          {
+            require('noice').api.statusline.mode.get,
+            cond = require('noice').api.statusline.mode.has,
+            color = { fg = '#ff9e64' },
+          },
+          'copilot',
+          'encoding',
+          current_formatter,
+          'filetype',
+        },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
