@@ -43,16 +43,13 @@ return {
           php = true,
           ['*'] = false, -- disable for all other filetypes and ignore default `filetypes`
         },
-        copilot_node_command = 'node', -- Node.js version must be > 18.x
+        copilot_node_command = 'node',
         server_opts_overrides = {},
       }
     end,
   },
   {
-    'zbirenbaum/copilot-cmp',
-    config = function()
-      require('copilot_cmp').setup()
-    end,
+    'giuxtaposition/blink-cmp-copilot',
   },
   {
     'AndreM222/copilot-lualine',
