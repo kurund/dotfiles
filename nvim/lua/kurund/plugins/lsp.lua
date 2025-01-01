@@ -134,6 +134,7 @@ return {
 
       -- setup mason
       require('mason').setup()
+      require('mason-lspconfig').setup()
 
       -- you can add other tools here that you want Mason to install or do it in neovim
       local ensure_installed = vim.tbl_keys(opts.servers or {})
@@ -146,8 +147,6 @@ return {
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-      require('mason-lspconfig').setup {}
     end,
   },
 }
