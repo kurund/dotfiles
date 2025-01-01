@@ -36,6 +36,7 @@
     "custom/hyprshade",
     "idle_inhibitor",
     "clock",
+    "custom/notification",
     "custom/exit",
     "custom/empty",
   ],
