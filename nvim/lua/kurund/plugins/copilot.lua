@@ -41,6 +41,7 @@ return {
           html = true,
           css = true,
           php = true,
+          python = true,
           ['*'] = false, -- disable for all other filetypes and ignore default `filetypes`
         },
         copilot_node_command = 'node',
