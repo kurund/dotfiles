@@ -1,6 +1,7 @@
 theme = Oxocarbon 
 
-font-family = CommitMono
+#font-family = CommitMono
+font-family = Maple Mono 
 font-size = 12
 
 window-decoration = false
