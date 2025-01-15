@@ -83,3 +83,7 @@ keymap.set('n', 'xs', ':close<CR>', opts) -- close current split window
 -- quick fix navigation
 keymap.set('n', '<M-j>', '<cmd>cnext<CR>')
 keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
+
+-- moving lines up and down
+keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
