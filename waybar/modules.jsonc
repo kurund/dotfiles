@@ -18,6 +18,11 @@
     },
   },
 
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "{name}",
+  },
   // left modules
 
   // Taskbar
@@ -139,6 +144,11 @@
 
   "hyprland/language": {
     "format": " {short}",
+  },
+
+  "sway/language": {
+    "format": " {}",
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
   },
 
   // Group Hardware
