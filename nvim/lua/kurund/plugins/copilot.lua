@@ -42,6 +42,8 @@ return {
           css = true,
           php = true,
           python = true,
+          smarty = true,
+          yml = true,
           ['*'] = false, -- disable for all other filetypes and ignore default `filetypes`
         },
         copilot_node_command = 'node',
