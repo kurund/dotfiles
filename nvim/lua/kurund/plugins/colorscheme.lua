@@ -2,7 +2,6 @@ return {
   -- You can easily change to a different colorscheme.
   -- Change the name of the colorscheme plugin below, and then
   -- change the command in the config to whatever the name of that colorscheme is.
-  -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
   {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
@@ -129,7 +128,6 @@ return {
           noice = true,
           notify = true,
           semantic_tokens = true,
-          telescope = true,
           treesitter = true,
           treesitter_context = true,
           which_key = true,
