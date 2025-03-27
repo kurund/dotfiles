@@ -1,6 +1,6 @@
-theme = Oxocarbon 
+# theme = Oxocarbon
 
-#font-family = CommitMono
+# font-family = CommitMono
 font-family = Maple Mono 
 font-size = 12
 
