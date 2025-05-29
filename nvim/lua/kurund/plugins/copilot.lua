@@ -43,6 +43,7 @@ return {
           php = true,
           python = true,
           smarty = true,
+          svelte = true,
           yml = true,
           ['*'] = false, -- disable for all other filetypes and ignore default `filetypes`
         },

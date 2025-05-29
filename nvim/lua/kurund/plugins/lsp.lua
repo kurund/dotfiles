@@ -44,6 +44,7 @@ return {
         pyright = {},
         svelte = {},
         ts_ls = {},
+        tailwindcss = {},
       },
     },
     config = function(_, opts)
