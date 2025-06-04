@@ -176,4 +176,5 @@ return {
     name = 'lackluster-hack',
     priority = 1000,
   },
+  { 'EdenEast/nightfox.nvim' },
 }
