@@ -54,3 +54,11 @@ vim.api.nvim_create_user_command('WordPressStandard', function()
 end, {
   desc = 'Set WordPress coding standard',
 })
+
+-- Remove autocommenting on new lines
+vim.api.nvim_create_autocmd('BufEnter', {
+  desc = 'Remove autocommenting on new lines',
+  group = vim.api.nvim_create_augroup('autocomment_disable', { clear = true }),
+  pattern = '*',
+  command = 'set fo-=c fo-=r fo-=o',
+})
