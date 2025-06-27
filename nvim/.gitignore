@@ -1,9 +1,8 @@
-tags
-test.sh
-.luarc.json
-nvim
-
-spell/
-lazy-lock.json
-
-lua/kurund/plugins/dap-paths-local
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
