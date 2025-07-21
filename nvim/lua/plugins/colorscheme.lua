@@ -10,4 +10,10 @@ return {
     priority = 1000,
   },
   { "EdenEast/nightfox.nvim" },
+  {
+    "eldritch-theme/eldritch.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
 }
