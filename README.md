@@ -5,11 +5,11 @@
 - NeoVim editor
 - Tmux multiplexer
 - Ghostty terminal
-- Starship shell prompt
 - Hyperland and related configs
 
 ### Past configs
 
+- Starship shell prompt
 - Zellij multiplexer
 - Kitty terminal
 - Wezterm terminal
