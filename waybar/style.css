@@ -24,7 +24,7 @@ window#waybar {
 }
 
 #workspaces {
-  border-radius: 0.5rem;
+  border-radius: 5rem;
   margin: 0px 4px;
   background: @crust;
 }
@@ -38,8 +38,8 @@ window#waybar {
 
 #workspaces button.active {
   color: @crust;
-  background: @peach;
-  border-radius: 0.5rem;
+  background: @blue;
+  border-radius: 5rem;
   /* min-width: 30px; */
   transition: all 0.3s ease-in-out;
   opacity: 1;
