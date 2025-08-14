@@ -4,7 +4,15 @@ theme = Oxocarbon
 font-family = Maple Mono 
 font-size = 12
 
-# window-decoration = false
+window-decoration = false
 
 background-opacity = 0.85
 background-blur-radius = 20
+
+term = xterm-256color
+window-padding-y = 0
+window-padding-balance = false
+confirm-close-surface = false
+mouse-hide-while-typing = true
+resize-overlay = never
+cursor-style = underline
