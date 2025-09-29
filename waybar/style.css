@@ -7,14 +7,15 @@
 }
 
 window#waybar {
-  background: transparent;
+  /* background: transparent; */
+  background: @crust;
   color: @text;
   transition-property: background;
   transition-duration: 0.5s;
   /* border: 1px solid @blue; */
   /* border-radius: 1rem; */
   margin: 0 10px;
-  padding: 0;
+  padding: 10px;
   font-size: 0.6rem;
 }
 
@@ -39,7 +40,7 @@ window#waybar {
 #workspaces button.active {
   color: @crust;
   background: @blue;
-  border-radius: 5rem;
+  /* border-radius: 5rem; */
   /* min-width: 30px; */
   transition: all 0.3s ease-in-out;
   opacity: 1;
