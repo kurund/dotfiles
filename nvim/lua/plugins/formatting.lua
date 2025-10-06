@@ -17,7 +17,7 @@ return {
 
       formatters_by_ft = {
         php = { "phpcbf" },
-        python = { "ruff" },
+        python = { "black", "ruff" },
       },
     },
   },
