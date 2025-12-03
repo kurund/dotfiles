@@ -55,6 +55,7 @@ window#waybar {
 #custom-empty,
 #cpu,
 #memory,
+#disk,
 #custom-weather,
 #custom-media,
 #pulseaudio,
@@ -81,6 +82,10 @@ window#waybar {
 }
 
 #memory {
+  color: @yellow;
+}
+
+#disk {
   color: @teal;
 }
 

@@ -16,6 +16,7 @@
     "custom/empty",
     "cpu",
     "memory",
+    "disk",
     "custom/weather",
     // "hyprland/window",
     // "sway/window",
