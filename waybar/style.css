@@ -72,8 +72,8 @@ window#waybar {
   padding: 0 0.5rem;
   background: @crust;
   border-radius: 0.5rem;
-  /* border-bottom: 0.5px dotted @peach; */
-  /* border-left: 0.5px dotted @peach; */
+  border-bottom: 0.5px dotted @crust;
+  border-left: 0.5px dotted @crust;
   margin: 0 3px;
 }
 
