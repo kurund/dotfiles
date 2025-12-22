@@ -14,21 +14,22 @@ window#waybar {
   transition-duration: 0.5s;
   /* border: 1px solid @blue; */
   /* border-radius: 1rem; */
-  margin: 0 10px;
-  padding: 10px;
-  font-size: 0.6rem;
+  /* margin: 10px 10px; */
+  /* padding: 10px; */
+  font-size: 0.7rem;
+  margin: 4px 4px;
 }
 
 .modules-left,
 .modules-right {
-  font-size: 0.8rem;
+  margin: 4px 4px;
 }
 
 #workspaces {
   border-radius: 5rem;
-  margin: 0px 4px;
-  background: @crust;
-  padding: 0 2px;
+  margin: 4px 4px;
+  /* background: @crust; */
+  /* padding: 0 2px; */
 }
 
 #workspaces button {
@@ -71,10 +72,10 @@ window#waybar {
 #clock,
 #window {
   padding: 0 0.5rem;
-  background: @crust;
-  border-radius: 0.5rem;
-  border-bottom: 0.5px dotted @crust;
-  border-left: 0.5px dotted @crust;
+  /* background: @crust; */
+  /* border-radius: 0.5rem; */
+  /* border-bottom: 0.5px dotted @crust; */
+  /* border-left: 0.5px dotted @crust; */
   margin: 0 3px;
 }
 
