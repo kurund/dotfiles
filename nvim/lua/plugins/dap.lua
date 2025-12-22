@@ -24,7 +24,9 @@ return {
     -- lets set dynamic path dynamically for debugging
     local cmsPath = vim.fn.getcwd() .. "/src"
     -- check if it's WordPress or Drupal instance and set correct path
-    if isdir(cmsPath .. "/wordpress") then
+    if isdir(cmsPath .. "/bedrock") then
+      cmsPath = cmsPath .. "/bedrock"
+    elseif isdir(cmsPath .. "/wordpress") then
       cmsPath = cmsPath .. "/wordpress"
     elseif isdir(cmsPath .. "/drupal") then
       cmsPath = cmsPath .. "/drupal"
