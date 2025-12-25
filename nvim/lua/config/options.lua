@@ -4,3 +4,6 @@
 
 -- by default disable diagnostics
 vim.diagnostic.disable()
+
+-- enable wrapping of lines
+vim.opt.wrap = true

@@ -2,9 +2,9 @@ theme = Oxocarbon
 
 # font-family = CommitMono
 font-family = Maple Mono 
-font-size = 12
+font-size = 18
 
-window-decoration = false
+# window-decoration = false
 
 background-opacity = 0.85
 background-blur-radius = 20
