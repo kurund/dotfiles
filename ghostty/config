@@ -3,11 +3,7 @@ theme = Oxocarbon
 # font-family = CommitMono
 font-family = Maple Mono 
 
-# mac
-# font-size = 18
-
-# linux
-font-size = 14
+font-size = 18
 
 window-decoration = false
 
