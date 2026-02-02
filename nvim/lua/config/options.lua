@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- by default disable diagnostics
-vim.diagnostic.disable()
+vim.diagnostic.enable(false)
 
 -- enable wrapping of lines
 vim.opt.wrap = true
