@@ -24,8 +24,8 @@
   ],
 
   // Modules Center
-  "modules-center": ["hyprland/workspaces"],
-  // "modules-center": ["sway/workspaces"],
+  // "modules-center": ["hyprland/workspaces"],
+  "modules-center": ["sway/workspaces"],
 
   // Modules Right
   "modules-right": [
@@ -36,8 +36,8 @@
     "battery",
     "network",
     "tray",
-    "hyprland/language",
-    // "sway/language",
+    // "hyprland/language",
+    "sway/language",
     // "custom/hyprshade",
     "idle_inhibitor",
     "clock",
