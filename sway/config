@@ -294,4 +294,10 @@ gaps outer 20
 # Configure the default border:
 default_border pixel 2
 
+# Screensharing
+exec_always {
+  export XDG_CURRENT_DESKTOP=sway
+  export XDG_SESSION_TYPE=wayland
+}
+
 include /etc/sway/config.d/*
