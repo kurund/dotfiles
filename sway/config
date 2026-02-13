@@ -303,4 +303,7 @@ exec_always {
   export XDG_SESSION_TYPE=wayland
 }
 
+# focus on window where application is opened
+focus_on_window_activation focus
+
 include /etc/sway/config.d/*
