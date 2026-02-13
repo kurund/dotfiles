@@ -92,6 +92,9 @@ input "type:mouse" {
     # Start your launcher
     bindsym $mod+space exec $menu
 
+    # Start file manager
+    bindsym $mod+n exec nautilus
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -255,7 +258,7 @@ bindsym $mod+r mode "resize"
 
 # Set the waybar command for the application launcher:
 bar {
-    swaybar_command waybar
+    swaybar_command /home/kurund/.config/waybar/scripts/launch.sh
 }
 
 # set Clamshell Mode
