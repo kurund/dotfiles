@@ -32,8 +32,9 @@ fi
 
 echo "Switching to theme: $THEME"
 
-# 1. Waybar: change @import in style.css
-sed -i "s|^@import \".*\.css\";|@import \"${THEME}.css\";|" "$CONFIG_DIR/waybar/style.css"
+# 1. Waybar: change color and bar-style @imports in style.css
+sed -i '1s|^@import ".*\.css";|@import "'"${THEME}"'.css";|' "$CONFIG_DIR/waybar/style.css"
+sed -i '2s|^@import ".*-bar\.css";|@import "'"${THEME}"'-bar.css";|' "$CONFIG_DIR/waybar/style.css"
 
 # 2. Kitty: change include in kitty.conf
 sed -i "s|^include .*\.conf$|include ${THEME}.conf|" "$CONFIG_DIR/kitty/kitty.conf"
@@ -56,16 +57,30 @@ ln -sf "${THEME}.css" "$CONFIG_DIR/swaync/style.css"
 # 8. Wlogout: symlink swap
 ln -sf "${THEME}.css" "$CONFIG_DIR/wlogout/style.css"
 
+# 9. Waybar workspace icons: swap between Japanese numerals and plain digits
+MODULES="$CONFIG_DIR/waybar/modules.jsonc"
+if [[ "$THEME" == "vaporwave" ]]; then
+    sed -i 's|"1": "1"|"1": "一"|; s|"2": "2"|"2": "二"|; s|"3": "3"|"3": "三"|' "$MODULES"
+    sed -i 's|"4": "4"|"4": "四"|; s|"5": "5"|"5": "五"|; s|"6": "6"|"6": "六"|' "$MODULES"
+    sed -i 's|"7": "7"|"7": "七"|; s|"8": "8"|"8": "八"|; s|"9": "9"|"9": "九"|' "$MODULES"
+    sed -i 's|"10": "10"|"10": "十"|' "$MODULES"
+elif [[ "$THEME" == "atomic" ]]; then
+    sed -i 's|"1": "一"|"1": "1"|; s|"2": "二"|"2": "2"|; s|"3": "三"|"3": "3"|' "$MODULES"
+    sed -i 's|"4": "四"|"4": "4"|; s|"5": "五"|"5": "5"|; s|"6": "六"|"6": "6"|' "$MODULES"
+    sed -i 's|"7": "七"|"7": "7"|; s|"8": "八"|"8": "8"|; s|"9": "九"|"9": "9"|' "$MODULES"
+    sed -i 's|"10": "十"|"10": "10"|' "$MODULES"
+fi
+
 echo "Config files updated. Reloading services..."
+
+# Restart waybar (kill + relaunch, same as sway uses via swaybar_command)
+"$CONFIG_DIR/waybar/scripts/launch.sh"
 
 # Reload sway (picks up theme include + swaylock config)
 swaymsg reload 2>/dev/null || true
 
-# Restart waybar
-pkill waybar 2>/dev/null || true
-sleep 0.3
-waybar &
-disown
+# Re-apply gaps (reload doesn't apply to existing workspaces)
+swaymsg gaps inner all set 10 2>/dev/null || true
 
 # Reload swaync styles
 swaync-client --reload-css 2>/dev/null || true
