@@ -1,8 +1,20 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 
-local env_var_nvim_theme = os.getenv("NVIM_THEME") or "tokyonight-night"
-vim.cmd.colorscheme(env_var_nvim_theme)
+-- Read theme: .theme file > NVIM_THEME env var > default
+local function read_theme()
+  local theme_file = vim.fn.stdpath("config") .. "/.theme"
+  local f = io.open(theme_file, "r")
+  if f then
+    local theme = f:read("*l")
+    f:close()
+    if theme and theme ~= "" then
+      return theme
+    end
+  end
+  return os.getenv("NVIM_THEME") or "tokyonight-night"
+end
+vim.cmd.colorscheme(read_theme())
 
 -- Define default php standard, Drupal in this case means CiviCRM
 vim.g.php_standard = "Drupal"

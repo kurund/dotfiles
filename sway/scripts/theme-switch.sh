@@ -9,25 +9,25 @@ CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 THEMES=("vaporwave" "atomic")
 
 pick_theme() {
-    printf '%s\n' "${THEMES[@]}" | rofi -dmenu -p "Theme" -i
+  printf '%s\n' "${THEMES[@]}" | rofi -dmenu -p "Theme" -i
 }
 
 THEME="${1:-$(pick_theme)}"
 
 if [[ -z "$THEME" ]]; then
-    echo "No theme selected."
-    exit 0
+  echo "No theme selected."
+  exit 0
 fi
 
 # Validate theme
 valid=false
 for t in "${THEMES[@]}"; do
-    [[ "$t" == "$THEME" ]] && valid=true && break
+  [[ "$t" == "$THEME" ]] && valid=true && break
 done
 if ! $valid; then
-    echo "Unknown theme: $THEME"
-    echo "Available: ${THEMES[*]}"
-    exit 1
+  echo "Unknown theme: $THEME"
+  echo "Available: ${THEMES[*]}"
+  exit 1
 fi
 
 echo "Switching to theme: $THEME"
@@ -60,16 +60,24 @@ ln -sf "${THEME}.css" "$CONFIG_DIR/wlogout/style.css"
 # 9. Waybar workspace icons: swap between Japanese numerals and plain digits
 MODULES="$CONFIG_DIR/waybar/modules.jsonc"
 if [[ "$THEME" == "vaporwave" ]]; then
-    sed -i 's|"1": "1"|"1": "一"|; s|"2": "2"|"2": "二"|; s|"3": "3"|"3": "三"|' "$MODULES"
-    sed -i 's|"4": "4"|"4": "四"|; s|"5": "5"|"5": "五"|; s|"6": "6"|"6": "六"|' "$MODULES"
-    sed -i 's|"7": "7"|"7": "七"|; s|"8": "8"|"8": "八"|; s|"9": "9"|"9": "九"|' "$MODULES"
-    sed -i 's|"10": "10"|"10": "十"|' "$MODULES"
+  sed -i 's|"1": "1"|"1": "一"|; s|"2": "2"|"2": "二"|; s|"3": "3"|"3": "三"|' "$MODULES"
+  sed -i 's|"4": "4"|"4": "四"|; s|"5": "5"|"5": "五"|; s|"6": "6"|"6": "六"|' "$MODULES"
+  sed -i 's|"7": "7"|"7": "七"|; s|"8": "8"|"8": "八"|; s|"9": "9"|"9": "九"|' "$MODULES"
+  sed -i 's|"10": "10"|"10": "十"|' "$MODULES"
 elif [[ "$THEME" == "atomic" ]]; then
-    sed -i 's|"1": "一"|"1": "1"|; s|"2": "二"|"2": "2"|; s|"3": "三"|"3": "3"|' "$MODULES"
-    sed -i 's|"4": "四"|"4": "4"|; s|"5": "五"|"5": "5"|; s|"6": "六"|"6": "6"|' "$MODULES"
-    sed -i 's|"7": "七"|"7": "7"|; s|"8": "八"|"8": "8"|; s|"9": "九"|"9": "9"|' "$MODULES"
-    sed -i 's|"10": "十"|"10": "10"|' "$MODULES"
+  sed -i 's|"1": "一"|"1": "1"|; s|"2": "二"|"2": "2"|; s|"3": "三"|"3": "3"|' "$MODULES"
+  sed -i 's|"4": "四"|"4": "4"|; s|"5": "五"|"5": "5"|; s|"6": "六"|"6": "6"|' "$MODULES"
+  sed -i 's|"7": "七"|"7": "7"|; s|"8": "八"|"8": "8"|; s|"9": "九"|"9": "9"|' "$MODULES"
+  sed -i 's|"10": "十"|"10": "10"|' "$MODULES"
 fi
+
+# 10. Neovim: write theme name for nvim to pick up on launch
+NVIM_THEME_MAP_vaporwave="tokyonight-night"
+NVIM_THEME_MAP_atomic="atomic"
+nvim_theme_var="NVIM_THEME_MAP_${THEME}"
+NVIM_THEME="${!nvim_theme_var}"
+mkdir -p "$CONFIG_DIR/nvim"
+echo "$NVIM_THEME" >"$CONFIG_DIR/nvim/.theme"
 
 echo "Config files updated. Reloading services..."
 
