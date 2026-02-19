@@ -1,0 +1,102 @@
+/* Vaporwave workspace & pill effects — neon glow aesthetic */
+
+@keyframes glow-pulse {
+  0%   { box-shadow: 0 0 6px alpha(@accent-primary, 0.5), inset 0 0 4px alpha(@accent-primary, 0.1); }
+  50%  { box-shadow: 0 0 16px alpha(@accent-primary, 0.9), 0 0 30px alpha(@accent-secondary, 0.4), inset 0 0 8px alpha(@accent-primary, 0.2); }
+  100% { box-shadow: 0 0 6px alpha(@accent-primary, 0.5), inset 0 0 4px alpha(@accent-primary, 0.1); }
+}
+
+#workspaces {
+  background: alpha(@base-deep, 0.95);
+  border-radius: 16px;
+  border: 1px solid alpha(@accent-secondary, 0.5);
+  border-bottom: 2px solid alpha(@accent-primary, 0.3);
+  padding: 3px 8px;
+  margin: 2px 4px;
+  box-shadow: 0 2px 8px alpha(@base, 0.6), inset 0 1px 0 alpha(@surface-highlight, 0.15);
+}
+
+#workspaces button {
+  color: @text-dim;
+  font-size: 14px;
+  padding: 3px 12px;
+  margin: 3px 3px;
+  min-width: 32px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid alpha(@surface-border, 0.5);
+  background: alpha(@surface, 0.4);
+  box-shadow: 0 1px 3px alpha(@base, 0.4);
+  transition: all 0.3s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: @base;
+  background: @accent-primary;
+  border-color: @accent-primary;
+  border-radius: 10px;
+  font-weight: 900;
+  box-shadow: 0 0 12px alpha(@accent-primary, 0.7), 0 2px 6px alpha(@base, 0.5);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+#workspaces button:hover {
+  color: @text;
+  background: alpha(@surface-border, 0.8);
+  border-color: alpha(@accent-primary, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 8px alpha(@accent-primary, 0.3), 0 2px 4px alpha(@base, 0.4);
+}
+
+/* Per-workspace accent colors */
+#workspaces button.focused:nth-child(1),
+#workspaces button.active:nth-child(1) {
+  background: @accent-primary; border-color: @accent-primary;
+  box-shadow: 0 0 12px alpha(@accent-primary, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(2),
+#workspaces button.active:nth-child(2) {
+  background: @accent-secondary; border-color: @accent-secondary;
+  box-shadow: 0 0 12px alpha(@accent-secondary, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(3),
+#workspaces button.active:nth-child(3) {
+  background: @accent-tertiary; border-color: @accent-tertiary;
+  box-shadow: 0 0 12px alpha(@accent-tertiary, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(4),
+#workspaces button.active:nth-child(4) {
+  background: @accent-quaternary; border-color: @accent-quaternary;
+  box-shadow: 0 0 12px alpha(@accent-quaternary, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(5),
+#workspaces button.active:nth-child(5) {
+  background: @warning; border-color: @warning; color: @base;
+  box-shadow: 0 0 12px alpha(@warning, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(6),
+#workspaces button.active:nth-child(6) {
+  background: @accent-highlight; border-color: @accent-highlight; color: @base;
+  box-shadow: 0 0 12px alpha(@accent-highlight, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(7),
+#workspaces button.active:nth-child(7) {
+  background: @success; border-color: @success; color: @base;
+  box-shadow: 0 0 12px alpha(@success, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(8),
+#workspaces button.active:nth-child(8) {
+  background: @accent-warm; border-color: @accent-warm; color: @base;
+  box-shadow: 0 0 12px alpha(@accent-warm, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(9),
+#workspaces button.active:nth-child(9) {
+  background: @accent-subtle; border-color: @accent-subtle; color: @base;
+  box-shadow: 0 0 12px alpha(@accent-subtle, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
+#workspaces button.focused:nth-child(10),
+#workspaces button.active:nth-child(10) {
+  background: @danger; border-color: @danger;
+  box-shadow: 0 0 12px alpha(@danger, 0.7), 0 2px 6px alpha(@base, 0.5);
+}
