@@ -1,0 +1,21 @@
+# Atomic theme for Sway
+# Include this from your sway config with: include ~/.config/sway/atomic-theme
+
+#========================#
+# Atomic Appearance      #
+#========================#
+
+# Declare Colors:
+set $background #0d1b22
+set $color_urgent #c9392b
+set $text_color #f5ecd7
+set $title_bg_unfocused #162830
+set $title_outline_active #2fb8b0
+set $title_outline_unfocused #1e3038
+
+# Set Colors:           Border                   Background          Text          Indicator             Child Border
+client.background       $background
+client.focused          $title_outline_active    $background         $text_color   $title_outline_active $title_outline_active
+client.focused_inactive $title_outline_unfocused $background         $text_color   $text_color           $title_outline_unfocused
+client.unfocused        $title_outline_unfocused $title_bg_unfocused $text_color   $title_outline_active
+client.urgent           $color_urgent            $color_urgent       $color_urgent $color_urgent         $color_urgent

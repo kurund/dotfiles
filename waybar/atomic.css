@@ -1,0 +1,27 @@
+/* Atomic (retro space-age) color palette */
+@define-color accent-soft #f5ecd7;
+@define-color accent-warm #e07a4d;
+@define-color accent-primary #e05a2d;
+@define-color accent-secondary #2fb8b0;
+@define-color danger #c9392b;
+@define-color danger-deep #8b1a10;
+@define-color accent-highlight #d4953a;
+@define-color warning #e8c547;
+@define-color success #4dcb8a;
+@define-color accent-quaternary #3a9e96;
+@define-color accent-light #7accc6;
+@define-color accent-tertiary #2fb8b0;
+@define-color accent-muted #4a7fa5;
+@define-color accent-subtle #7accc6;
+@define-color text #f5ecd7;
+@define-color text-secondary #d9cdb8;
+@define-color text-tertiary #b8a990;
+@define-color text-bright #8a7d6b;
+@define-color text-muted #6b6054;
+@define-color text-dim #4a4238;
+@define-color surface-highlight #2a3d44;
+@define-color surface-border #1e3038;
+@define-color surface #162830;
+@define-color base-mid #112228;
+@define-color base-deep #0a151a;
+@define-color base #0d1b22;

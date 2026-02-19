@@ -1,0 +1,68 @@
+* {
+    background-image: none;
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 14px;
+}
+
+window {
+    background-color: rgba(13, 27, 34, 0.85);
+}
+
+button {
+    color: #f5ecd7;
+    background-color: rgba(22, 40, 48, 0.8);
+    border: 2px solid rgba(47, 184, 176, 0.4);
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+button:focus, button:active, button:hover {
+    background-color: rgba(47, 184, 176, 0.3);
+    border-color: #e05a2d;
+    outline-style: none;
+    color: #e05a2d;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/assets/lock.svg"));
+}
+
+#lock:focus, #lock:active, #lock:hover {
+    border-color: #2fb8b0;
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/assets/logout.svg"));
+}
+
+#logout:focus, #logout:active, #logout:hover {
+    border-color: #2fb8b0;
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/assets/suspend.svg"));
+}
+
+#suspend:focus, #suspend:active, #suspend:hover {
+    border-color: #4dcb8a;
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/assets/reboot.svg"));
+}
+
+#reboot:focus, #reboot:active, #reboot:hover {
+    border-color: #e8c547;
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/assets/shutdown.svg"));
+}
+
+#shutdown:focus, #shutdown:active, #shutdown:hover {
+    border-color: #c9392b;
+}

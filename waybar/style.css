@@ -1,4 +1,4 @@
-@import "vaporwave.css";
+@import "atomic.css";
 
 * {
   font-family: "JetBrains Mono Nerd Font", "Noto Sans CJK JP", "Font Awesome 6 Free";
@@ -8,18 +8,18 @@
 
 window#waybar {
   background: transparent;
-  color: @vapor-text;
+  color: @text;
 }
 
 tooltip {
-  background: @abyss;
-  border: 1px solid @neon-purple;
+  background: @base;
+  border: 1px solid @accent-secondary;
   border-radius: 8px;
-  color: @vapor-text;
+  color: @text;
 }
 
 tooltip label {
-  color: @vapor-text;
+  color: @text;
 }
 
 /* ── Module groups (floating pills) ── */
@@ -39,104 +39,104 @@ tooltip label {
 /* ── Workspaces ── */
 
 @keyframes glow-pulse {
-  0%   { box-shadow: 0 0 6px alpha(@neon-pink, 0.5), inset 0 0 4px alpha(@neon-pink, 0.1); }
-  50%  { box-shadow: 0 0 16px alpha(@neon-pink, 0.9), 0 0 30px alpha(@neon-purple, 0.4), inset 0 0 8px alpha(@neon-pink, 0.2); }
-  100% { box-shadow: 0 0 6px alpha(@neon-pink, 0.5), inset 0 0 4px alpha(@neon-pink, 0.1); }
+  0%   { box-shadow: 0 0 6px alpha(@accent-primary, 0.5), inset 0 0 4px alpha(@accent-primary, 0.1); }
+  50%  { box-shadow: 0 0 16px alpha(@accent-primary, 0.9), 0 0 30px alpha(@accent-secondary, 0.4), inset 0 0 8px alpha(@accent-primary, 0.2); }
+  100% { box-shadow: 0 0 6px alpha(@accent-primary, 0.5), inset 0 0 4px alpha(@accent-primary, 0.1); }
 }
 
 #workspaces {
-  background: alpha(@deep-void, 0.95);
+  background: alpha(@base-deep, 0.95);
   border-radius: 16px;
-  border: 1px solid alpha(@neon-purple, 0.5);
-  border-bottom: 2px solid alpha(@neon-pink, 0.3);
+  border: 1px solid alpha(@accent-secondary, 0.5);
+  border-bottom: 2px solid alpha(@accent-primary, 0.3);
   padding: 3px 8px;
   margin: 2px 4px;
-  box-shadow: 0 2px 8px alpha(@abyss, 0.6), inset 0 1px 0 alpha(@plum-light, 0.15);
+  box-shadow: 0 2px 8px alpha(@base, 0.6), inset 0 1px 0 alpha(@surface-highlight, 0.15);
 }
 
 #workspaces button {
-  color: @haze-dark;
+  color: @text-dim;
   font-size: 14px;
   padding: 3px 12px;
   margin: 3px 3px;
   min-width: 32px;
   border-radius: 10px;
   font-weight: bold;
-  border: 1px solid alpha(@plum, 0.5);
-  background: alpha(@plum-dark, 0.4);
-  box-shadow: 0 1px 3px alpha(@abyss, 0.4);
+  border: 1px solid alpha(@surface-border, 0.5);
+  background: alpha(@surface, 0.4);
+  box-shadow: 0 1px 3px alpha(@base, 0.4);
   transition: all 0.3s ease;
 }
 
 #workspaces button.focused,
 #workspaces button.active {
-  color: @abyss;
-  background: @neon-pink;
-  border-color: @neon-pink;
+  color: @base;
+  background: @accent-primary;
+  border-color: @accent-primary;
   border-radius: 10px;
   font-weight: 900;
-  box-shadow: 0 0 12px alpha(@neon-pink, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  box-shadow: 0 0 12px alpha(@accent-primary, 0.7), 0 2px 6px alpha(@base, 0.5);
   animation: glow-pulse 2s ease-in-out infinite;
 }
 
 #workspaces button:hover {
-  color: @vapor-text;
-  background: alpha(@plum, 0.8);
-  border-color: alpha(@neon-pink, 0.5);
+  color: @text;
+  background: alpha(@surface-border, 0.8);
+  border-color: alpha(@accent-primary, 0.5);
   border-radius: 10px;
-  box-shadow: 0 0 8px alpha(@neon-pink, 0.3), 0 2px 4px alpha(@abyss, 0.4);
+  box-shadow: 0 0 8px alpha(@accent-primary, 0.3), 0 2px 4px alpha(@base, 0.4);
 }
 
 /* Per-workspace accent colors */
 #workspaces button.focused:nth-child(1),
 #workspaces button.active:nth-child(1) {
-  background: @neon-pink; border-color: @neon-pink;
-  box-shadow: 0 0 12px alpha(@neon-pink, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @accent-primary; border-color: @accent-primary;
+  box-shadow: 0 0 12px alpha(@accent-primary, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(2),
 #workspaces button.active:nth-child(2) {
-  background: @neon-purple; border-color: @neon-purple;
-  box-shadow: 0 0 12px alpha(@neon-purple, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @accent-secondary; border-color: @accent-secondary;
+  box-shadow: 0 0 12px alpha(@accent-secondary, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(3),
 #workspaces button.active:nth-child(3) {
-  background: @neon-cyan; border-color: @neon-cyan;
-  box-shadow: 0 0 12px alpha(@neon-cyan, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @accent-tertiary; border-color: @accent-tertiary;
+  box-shadow: 0 0 12px alpha(@accent-tertiary, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(4),
 #workspaces button.active:nth-child(4) {
-  background: @aqua; border-color: @aqua;
-  box-shadow: 0 0 12px alpha(@aqua, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @accent-quaternary; border-color: @accent-quaternary;
+  box-shadow: 0 0 12px alpha(@accent-quaternary, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(5),
 #workspaces button.active:nth-child(5) {
-  background: @pastel-yellow; border-color: @pastel-yellow; color: @abyss;
-  box-shadow: 0 0 12px alpha(@pastel-yellow, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @warning; border-color: @warning; color: @base;
+  box-shadow: 0 0 12px alpha(@warning, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(6),
 #workspaces button.active:nth-child(6) {
-  background: @sunset; border-color: @sunset; color: @abyss;
-  box-shadow: 0 0 12px alpha(@sunset, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @accent-highlight; border-color: @accent-highlight; color: @base;
+  box-shadow: 0 0 12px alpha(@accent-highlight, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(7),
 #workspaces button.active:nth-child(7) {
-  background: @neon-mint; border-color: @neon-mint; color: @abyss;
-  box-shadow: 0 0 12px alpha(@neon-mint, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @success; border-color: @success; color: @base;
+  box-shadow: 0 0 12px alpha(@success, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(8),
 #workspaces button.active:nth-child(8) {
-  background: @hot-rose; border-color: @hot-rose; color: @abyss;
-  box-shadow: 0 0 12px alpha(@hot-rose, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @accent-warm; border-color: @accent-warm; color: @base;
+  box-shadow: 0 0 12px alpha(@accent-warm, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(9),
 #workspaces button.active:nth-child(9) {
-  background: @soft-purple; border-color: @soft-purple; color: @abyss;
-  box-shadow: 0 0 12px alpha(@soft-purple, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @accent-subtle; border-color: @accent-subtle; color: @base;
+  box-shadow: 0 0 12px alpha(@accent-subtle, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 #workspaces button.focused:nth-child(10),
 #workspaces button.active:nth-child(10) {
-  background: @rose; border-color: @rose;
-  box-shadow: 0 0 12px alpha(@rose, 0.7), 0 2px 6px alpha(@abyss, 0.5);
+  background: @danger; border-color: @danger;
+  box-shadow: 0 0 12px alpha(@danger, 0.7), 0 2px 6px alpha(@base, 0.5);
 }
 
 /* ── Shared module pill style ── */
@@ -145,8 +145,8 @@ tooltip label {
 #memory,
 #disk,
 #custom-weather {
-  background: alpha(@abyss, 0.85);
-  border: 1px solid alpha(@neon-purple, 0.3);
+  background: alpha(@base, 0.85);
+  border: 1px solid alpha(@accent-secondary, 0.3);
   padding: 2px 12px;
   margin: 2px 2px;
   border-radius: 12px;
@@ -160,104 +160,104 @@ tooltip label {
 #tray,
 #language,
 #idle_inhibitor {
-  background: alpha(@abyss, 0.85);
-  border: 1px solid alpha(@neon-purple, 0.3);
+  background: alpha(@base, 0.85);
+  border: 1px solid alpha(@accent-secondary, 0.3);
   padding: 2px 12px;
   margin: 2px 2px;
   border-radius: 12px;
 }
 
 #clock {
-  background: alpha(@abyss, 0.85);
-  border: 1px solid alpha(@neon-pink, 0.5);
+  background: alpha(@base, 0.85);
+  border: 1px solid alpha(@accent-primary, 0.5);
   padding: 2px 14px;
   margin: 2px 2px;
   border-radius: 12px;
-  color: @neon-pink;
+  color: @accent-primary;
   font-weight: bold;
 }
 
 #custom-notification {
-  background: alpha(@abyss, 0.85);
-  border: 1px solid alpha(@neon-purple, 0.3);
+  background: alpha(@base, 0.85);
+  border: 1px solid alpha(@accent-secondary, 0.3);
   padding: 2px 10px;
   margin: 2px 2px;
   border-radius: 12px;
-  color: @soft-purple;
+  color: @accent-subtle;
 }
 
 #custom-exit {
-  background: alpha(@abyss, 0.85);
-  border: 1px solid alpha(@rose, 0.4);
+  background: alpha(@base, 0.85);
+  border: 1px solid alpha(@danger, 0.4);
   padding: 2px 10px;
   margin: 2px 4px;
   border-radius: 12px;
-  color: @rose;
+  color: @danger;
 }
 
 #custom-exit:hover {
-  background: alpha(@rose, 0.2);
+  background: alpha(@danger, 0.2);
 }
 
 /* ── Individual module colors ── */
 
 #cpu {
-  color: @neon-cyan;
+  color: @accent-tertiary;
 }
 
 #memory {
-  color: @neon-pink;
+  color: @accent-primary;
 }
 
 #disk {
-  color: @aqua;
+  color: @accent-quaternary;
 }
 
 #custom-weather {
-  color: @pastel-yellow;
+  color: @warning;
 }
 
 #custom-media {
-  color: @hot-rose;
+  color: @accent-warm;
 }
 
 #pulseaudio {
-  color: @soft-purple;
+  color: @accent-subtle;
 }
 
 #pulseaudio.muted {
-  color: @rose;
-  border-color: alpha(@rose, 0.3);
+  color: @danger;
+  border-color: alpha(@danger, 0.3);
 }
 
 #bluetooth {
-  color: @neon-cyan;
+  color: @accent-tertiary;
 }
 
 #battery {
-  color: @neon-mint;
+  color: @success;
 }
 
 #battery.charging {
-  color: @neon-mint;
-  border-color: alpha(@neon-mint, 0.4);
+  color: @success;
+  border-color: alpha(@success, 0.4);
 }
 
 #battery.warning:not(.charging) {
-  color: @pastel-yellow;
-  border-color: alpha(@pastel-yellow, 0.4);
+  color: @warning;
+  border-color: alpha(@warning, 0.4);
 }
 
 @keyframes blink {
   to {
-    background: alpha(@rose, 0.3);
-    color: @vapor-text;
+    background: alpha(@danger, 0.3);
+    color: @text;
   }
 }
 
 #battery.critical:not(.charging) {
-  color: @rose;
-  border-color: @rose;
+  color: @danger;
+  border-color: @danger;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -266,15 +266,15 @@ tooltip label {
 }
 
 #network {
-  color: @aqua;
+  color: @accent-quaternary;
 }
 
 #network.disconnected {
-  color: @haze-dark;
+  color: @text-dim;
 }
 
 #tray {
-  color: @vapor-text;
+  color: @text;
 }
 
 #tray > .passive {
@@ -286,16 +286,16 @@ tooltip label {
 }
 
 #language {
-  color: @neon-purple;
+  color: @accent-secondary;
 }
 
 #idle_inhibitor {
-  color: @soft-purple;
+  color: @accent-subtle;
 }
 
 #idle_inhibitor.activated {
-  color: @pastel-yellow;
-  border-color: alpha(@pastel-yellow, 0.4);
+  color: @warning;
+  border-color: alpha(@warning, 0.4);
 }
 
 /* ── Hide empty spacer pills ── */

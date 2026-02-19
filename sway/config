@@ -39,9 +39,9 @@ output DP-2 resolution 3840x2160@59.997Hz position 0,0
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -C ~/.config/swaylock/vaporwave-config' \
+         timeout 300 'swaylock -f -C ~/.config/swaylock/atomic-config' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -C ~/.config/swaylock/vaporwave-config'
+         before-sleep 'swaylock -f -C ~/.config/swaylock/atomic-config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -109,6 +109,9 @@ input "type:mouse" {
 
     # Reload waybar
     bindsym $mod+Shift+b exec /home/kurund/.config/waybar/scripts/launch.sh
+
+    # Theme switcher (rofi picker)
+    bindsym $mod+Shift+t exec ~/.config/sway/scripts/theme-switch.sh
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -271,7 +274,7 @@ bindswitch --reload --locked lid:off output $laptop enable
 exec_always ~/.config/sway/scripts/clamshell.sh
 
 
-include ~/.config/sway/vaporwave-theme
+include ~/.config/sway/atomic-theme
 
 # Add gaps in between all application windows:
 # gaps inner 8
