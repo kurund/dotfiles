@@ -23,7 +23,7 @@ set $menu rofi -show drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/Pictures/wallpapers/Minimal_Squares.png fill
+output * bg ~/src/contrib/Wallpaper-Bank/wallpapers/neon-spider-man-4k_3840x2160.jpg fill
 
 #
 # Example configuration:
@@ -39,15 +39,15 @@ output DP-2 resolution 3840x2160@59.997Hz position 0,0
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -C ~/.config/swaylock/vaporwave-config' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -C ~/.config/swaylock/vaporwave-config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-set $lock_bg ~/Pictures/wallpapers/Anime-City-Night.png
+set $lock_bg ~/src/contrib/Wallpaper-Bank/wallpapers/great-wall-of-china-hd-autumn_3840x2160.jpg
 
 bindsym Alt+l exec swaylock --hide-keyboard-layout -i $lock_bg
 
@@ -271,23 +271,7 @@ bindswitch --reload --locked lid:off output $laptop enable
 exec_always ~/.config/sway/scripts/clamshell.sh
 
 
-#========================#
-# Appearance and Theming #
-#========================#
-# Declare Colors:
-set $background #332b2b
-set $color_urgent #fb4934
-set $text_color #ffffff
-set $title_bg_unfocused #666666
-set $title_outline_active #0e844e
-set $title_outline_unfocused #332b2b
-
-# Set Colors:           Border                   Background          Text          Indicator             Child Border
-client.background       $background
-client.focused          $title_outline_active    $background         $text_color   $title_outline_active $title_outline_active
-client.focused_inactive $title_outline_unfocused $background         $text_color   $text_color           $title_outline_unfocused
-client.unfocused        $title_outline_unfocused $title_bg_unfocused $text_color   $title_outline_active
-client.urgent           $color_urgent            $color_urgent       $color_urgent $color_urgent         $color_urgent
+include ~/.config/sway/vaporwave-theme
 
 # Add gaps in between all application windows:
 # gaps inner 8

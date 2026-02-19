@@ -1,0 +1,68 @@
+ignore-empty-password
+
+# Clock
+clock
+timestr=%H:%M
+datestr=%A, %B %e
+
+# Font
+font=JetBrains Mono Nerd Font
+font-size=120
+text-color=ff71ceFF
+
+# Fade & Effects
+fade-in=0.3
+effect-blur=30x3
+effect-scale=0.4
+effect-vignette=0.5:0.5
+screenshots
+
+# Indicator ring
+indicator
+indicator-radius=160
+indicator-thickness=12
+indicator-caps-lock
+
+# Key highlight
+key-hl-color=ff71ceFF
+bs-hl-color=ff6b9dFF
+caps-lock-key-hl-color=fffb96FF
+caps-lock-bs-hl-color=ff6b9dFF
+
+# Separator
+separator-color=b967ffFF
+
+# Inside (center of ring)
+inside-color=1a1026cc
+inside-clear-color=1a1026cc
+inside-caps-lock-color=1a1026cc
+inside-ver-color=1a1026cc
+inside-wrong-color=1a1026cc
+
+# Ring
+ring-color=b967ffCC
+ring-clear-color=01cdfeCC
+ring-caps-lock-color=fffb96CC
+ring-ver-color=ff71ceCC
+ring-wrong-color=ff6b9dCC
+
+# Line between ring and inside
+line-color=00000000
+line-clear-color=01cdfeFF
+line-caps-lock-color=fffb96FF
+line-ver-color=ff71ceFF
+line-wrong-color=ff6b9dFF
+
+# Text inside ring
+text-color=e8dff5FF
+text-clear-color=01cdfeFF
+text-caps-lock-color=fffb96FF
+text-ver-color=ff71ceFF
+text-wrong-color=ff6b9dFF
+
+disable-caps-lock-text
+
+# Grace period
+grace=3
+grace-no-mouse
+grace-no-touch
