@@ -1,0 +1,2 @@
+layout splits
+launch --title "source" --cwd=~/src
