@@ -10,7 +10,7 @@ set $background #0d1b22
 set $color_urgent #c9392b
 set $text_color #f5ecd7
 set $title_bg_unfocused #162830
-set $title_outline_active #2fb8b0
+set $title_outline_active #e8c547
 set $title_outline_unfocused #1e3038
 
 # Set Colors:           Border                   Background          Text          Indicator             Child Border

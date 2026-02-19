@@ -280,7 +280,7 @@ include ~/.config/sway/atomic-theme
 # gaps inner 8
 # gaps outer 3
 
-gaps inner 4
+gaps inner 8
 gaps outer 20
 
 # Configure the default border:
