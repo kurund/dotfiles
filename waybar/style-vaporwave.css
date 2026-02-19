@@ -1,0 +1,177 @@
+@import "vaporwave.css";
+
+* {
+  font-family: "JetBrains Mono Nerd Font", "Font Awesome 6 Free";
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: @text;
+  transition-property: background;
+  transition-duration: 0.5s;
+  font-size: 0.7rem;
+  margin: 4px 4px;
+}
+
+.modules-left,
+.modules-right {
+  margin: 4px 4px;
+  background: alpha(@crust, 0.7);
+  border-radius: 8px;
+  border: 1px solid alpha(@mauve, 0.3);
+}
+
+.modules-center {
+  margin: 4px 4px;
+}
+
+#workspaces {
+  border-radius: 8px;
+  margin: 4px 4px;
+  background: alpha(@crust, 0.7);
+  border: 1px solid alpha(@pink, 0.3);
+}
+
+#workspaces button {
+  transition: all 0.3s ease-in-out;
+  opacity: 0.5;
+  color: @lavender;
+  font-weight: 900;
+  padding: 0 6px;
+}
+
+#workspaces button.active {
+  color: @crust;
+  background: linear-gradient(135deg, @pink, @mauve);
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  text-shadow: 0 0 5px @pink;
+}
+
+#workspaces button:hover {
+  color: @pink;
+  background: alpha(@surface0, 0.8);
+}
+
+#custom-empty,
+#cpu,
+#memory,
+#disk,
+#custom-weather,
+#custom-media,
+#pulseaudio,
+#bluetooth,
+#battery,
+#network,
+#language,
+#custom-hyprshade,
+#idle_inhibitor,
+#custom-notification,
+#custom-exit,
+#clock,
+#window {
+  padding: 0 0.5rem;
+  margin: 0 3px;
+}
+
+#cpu {
+  color: @sapphire;
+}
+
+#memory {
+  color: @pink;
+}
+
+#disk {
+  color: @teal;
+}
+
+#window {
+  color: @crust;
+  background: @mauve;
+  border-radius: 6px;
+}
+
+#custom-media {
+  color: @flamingo;
+}
+
+#pulseaudio {
+  color: @lavender;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#bluetooth {
+  color: @sapphire;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @yellow;
+}
+
+@keyframes blink {
+  to {
+    background: @red;
+    color: @text;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: @text;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#network {
+  color: @teal;
+}
+
+#tray.active {
+  padding: 0 0.5rem;
+}
+
+#tray.passive {
+  padding: 0 0.5rem;
+  -gtk-icon-effect: dim;
+}
+
+#tray.needs-attention {
+  padding: 0 0.5rem;
+  -gtk-icon-effect: highlight;
+}
+
+#language {
+  color: @mauve;
+}
+
+#custom-hyprshade {
+  color: @yellow;
+}
+
+#idle_inhibitor {
+  color: @lavender;
+}
+
+#clock {
+  color: @pink;
+}
+
+#custom-exit {
+  color: @red;
+}
