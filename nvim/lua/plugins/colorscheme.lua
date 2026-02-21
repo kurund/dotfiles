@@ -1,5 +1,11 @@
 return {
   {
+    "kurund/atomic.nvim",
+    dir = "~/src/atomic.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "nyoom-engineering/oxocarbon.nvim",
     name = "oxocarbon",
     priority = 1000,
