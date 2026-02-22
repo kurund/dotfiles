@@ -1,0 +1,115 @@
+# AeroSpace — Tiling Window Manager for macOS
+
+after-login-command = []
+after-startup-command = [
+  'exec-and-forget borders',
+  'exec-and-forget sketchybar',
+]
+
+# Notify SketchyBar on workspace change
+exec-on-workspace-change = [
+  '/bin/bash', '-c',
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
+# Start AeroSpace in the focused monitor
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# Normalizations
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Layout
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Gaps (matching sway: inner=8, outer=20, extra top for SketchyBar)
+[gaps]
+inner.horizontal = 8
+inner.vertical = 8
+outer.left = 20
+outer.right = 20
+outer.bottom = 20
+outer.top = 52
+
+# Main mode keybindings
+[mode.main.binding]
+
+# Terminal
+alt-enter = 'exec-and-forget open -na kitty'
+
+# Close window
+alt-q = 'close'
+
+# App launcher (Raycast)
+alt-space = 'exec-and-forget open -a "Raycast"'
+
+# Reload config
+alt-shift-c = 'reload-config'
+
+# Theme switcher
+alt-shift-t = 'exec-and-forget ~/.config/macos/theme-switch-macos.sh'
+
+# Focus (vim keys)
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# Move window (vim keys)
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# Fullscreen
+alt-f = 'fullscreen'
+
+# Toggle floating
+alt-shift-space = 'layout floating tiling'
+
+# Toggle layout (split orientation)
+alt-e = 'layout tiles horizontal vertical'
+
+# Split directions
+alt-b = 'split horizontal'
+alt-v = 'split vertical'
+
+# Focus parent
+alt-a = 'focus parent'
+
+# Switch to workspace
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
+
+# Move to workspace
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-0 = 'move-node-to-workspace 10'
+
+# Enter resize mode
+alt-r = 'mode resize'
+
+# Resize mode
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+escape = 'mode main'
+enter = 'mode main'

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# JankyBorders — Atomic theme window borders
+
+borders active_color=0xffe8c547 \
+  inactive_color=0xff1e3038 \
+  width=2.0 \
+  style=round \
+  hidpi=on
