@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Workspace indicators — center position
+# Workspace indicators — left position
 
 AEROSPACE_PLUGIN="$PLUGIN_DIR/aerospace.sh"
 
@@ -7,26 +7,38 @@ AEROSPACE_PLUGIN="$PLUGIN_DIR/aerospace.sh"
 UNFOCUSED_BG=0x4d162830     # surface at 30% opacity
 UNFOCUSED_BORDER=0x801e3038 # surface-border at 50% opacity
 
-for i in $(seq 1 10); do
+WS_COUNT=6
+
+for i in $(seq 1 $WS_COUNT); do
   # Get per-workspace accent color
   ws_color_var="WS_COLOR_${i}"
   ws_color="${!ws_color_var}"
 
-  sketchybar --add item workspace.$i center \
+  # Extra padding on first/last items so they don't merge into bracket border
+  PAD_LEFT=3
+  PAD_RIGHT=3
+  if [ "$i" -eq 1 ]; then
+    PAD_LEFT=6
+  fi
+  if [ "$i" -eq "$WS_COUNT" ]; then
+    PAD_RIGHT=6
+  fi
+
+  sketchybar --add item workspace.$i left \
     --set workspace.$i \
     icon="$i" \
-    icon.font="JetBrains Mono Nerd Font:Bold:13.0" \
-    icon.color=$TEXT_DIM \
-    icon.padding_left=0 \
-    icon.padding_right=0 \
+    icon.font="JetBrainsMono Nerd Font:Bold:13.0" \
+    icon.color=$TEXT_SECONDARY \
+    icon.padding_left=8 \
+    icon.padding_right=8 \
     label.drawing=off \
     background.color=$UNFOCUSED_BG \
     background.border_color=$UNFOCUSED_BORDER \
     background.border_width=2 \
     background.corner_radius=14 \
     background.height=28 \
-    padding_left=3 \
-    padding_right=3 \
+    padding_left=$PAD_LEFT \
+    padding_right=$PAD_RIGHT \
     click_script="aerospace workspace $i" \
     script="$AEROSPACE_PLUGIN $i $ws_color" \
     --subscribe workspace.$i aerospace_workspace_change

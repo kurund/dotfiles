@@ -7,7 +7,7 @@ WORKSPACE_ID="$1"
 ACCENT_COLOR="$2"
 
 # Load colors
-COLOR_DIR="$CONFIG_DIR/sketchybar/colors"
+COLOR_DIR="$HOME/.config/sketchybar/colors"
 if [ -f "$COLOR_DIR/current.sh" ]; then
   source "$COLOR_DIR/current.sh"
 else
@@ -25,7 +25,7 @@ if [ "$WORKSPACE_ID" = "$FOCUSED_WS" ]; then
 else
   # Unfocused: dim background, dim text
   sketchybar --set "$NAME" \
-    icon.color=$TEXT_DIM \
+    icon.color=$TEXT_SECONDARY \
     background.color=0x4d162830 \
     background.border_color=0x801e3038
 fi

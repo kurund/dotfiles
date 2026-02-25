@@ -1,21 +1,30 @@
 #!/usr/bin/env bash
 # Network plugin
 
-WIFI=$(/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I 2>/dev/null)
+ICON_WIFI=$'\xEF\x87\xAB'       # U+F1EB wifi
+ICON_ETHERNET=$'\xEF\x83\xA8'   # U+F0E8 sitemap
+ICON_OFF=$'\xEF\x81\xB1'        # U+F071 warning
 
-if [ -z "$WIFI" ] || echo "$WIFI" | grep -q "AirPort: Off"; then
-  sketchybar --set "$NAME" icon="󰤭 " label="off"
+# Check for active default route
+INTERFACE=$(route -n get default 2>/dev/null | awk '/interface:/ {print $2}')
+
+if [ -z "$INTERFACE" ]; then
+  sketchybar --set "$NAME" icon="$ICON_OFF" label="off"
+  exit 0
+fi
+
+IP=$(ipconfig getifaddr "$INTERFACE" 2>/dev/null)
+
+if [ -z "$IP" ]; then
+  sketchybar --set "$NAME" icon="$ICON_OFF" label="off"
+  exit 0
+fi
+
+# Check if interface is WiFi (en0 is typically WiFi on Mac)
+WIFI_HW=$(networksetup -listallhardwareports 2>/dev/null | grep -A1 "Wi-Fi" | awk '/Device:/ {print $2}')
+
+if [ "$INTERFACE" = "$WIFI_HW" ]; then
+  sketchybar --set "$NAME" icon="$ICON_WIFI" label="WiFi"
 else
-  SSID=$(echo "$WIFI" | awk -F': ' '/^ *SSID/ {print $2}')
-  if [ -n "$SSID" ]; then
-    sketchybar --set "$NAME" icon=" " label="$SSID"
-  else
-    # Wired or no SSID
-    INTERFACE=$(route -n get default 2>/dev/null | awk '/interface:/ {print $2}')
-    if [ -n "$INTERFACE" ]; then
-      sketchybar --set "$NAME" icon=" " label="$INTERFACE"
-    else
-      sketchybar --set "$NAME" icon="󰤭 " label="none"
-    fi
-  fi
+  sketchybar --set "$NAME" icon="$ICON_ETHERNET" label="$INTERFACE"
 fi

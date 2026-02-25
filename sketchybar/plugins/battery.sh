@@ -10,23 +10,29 @@ if [ -z "$PERCENT" ]; then
   exit 0
 fi
 
-# Choose icon based on level
+# Icons as raw UTF-8 hex bytes (bash 3.2 compatible)
+ICON_BOLT=$'\xEF\x83\xA7'           # U+F0E7 bolt
+ICON_BAT_FULL=$'\xEF\x89\x80'       # U+F240 battery-full
+ICON_BAT_THREE=$'\xEF\x89\x81'      # U+F241 battery-three-quarters
+ICON_BAT_HALF=$'\xEF\x89\x82'       # U+F242 battery-half
+ICON_BAT_QUARTER=$'\xEF\x89\x83'    # U+F243 battery-quarter
+ICON_BAT_EMPTY=$'\xEF\x89\x84'      # U+F244 battery-empty
+
 if [ "$CHARGING" -gt 0 ]; then
-  ICON=" "
+  ICON="$ICON_BOLT"
 elif [ "$PERCENT" -gt 80 ]; then
-  ICON=" "
+  ICON="$ICON_BAT_FULL"
 elif [ "$PERCENT" -gt 60 ]; then
-  ICON=" "
+  ICON="$ICON_BAT_THREE"
 elif [ "$PERCENT" -gt 40 ]; then
-  ICON=" "
+  ICON="$ICON_BAT_HALF"
 elif [ "$PERCENT" -gt 20 ]; then
-  ICON=" "
+  ICON="$ICON_BAT_QUARTER"
 else
-  ICON=" "
+  ICON="$ICON_BAT_EMPTY"
 fi
 
-# Color based on state (matches waybar battery states)
-COLOR_DIR="$CONFIG_DIR/sketchybar/colors"
+COLOR_DIR="$HOME/.config/sketchybar/colors"
 if [ -f "$COLOR_DIR/current.sh" ]; then
   source "$COLOR_DIR/current.sh"
 else
@@ -38,7 +44,7 @@ if [ "$CHARGING" -gt 0 ]; then
   BORDER=0x664dcb8a
 elif [ "$PERCENT" -le 15 ]; then
   COLOR=$DANGER
-  BORDER=0xff$(echo "$DANGER" | tail -c 7)
+  BORDER=0xffc9392b
 elif [ "$PERCENT" -le 30 ]; then
   COLOR=$WARNING
   BORDER=0x66e8c547

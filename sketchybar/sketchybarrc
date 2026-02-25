@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # SketchyBar — Atomic theme main config
 
-PLUGIN_DIR="$CONFIG_DIR/sketchybar/plugins"
-ITEM_DIR="$CONFIG_DIR/sketchybar/items"
-COLOR_DIR="$CONFIG_DIR/sketchybar/colors"
+SKETCHYBAR_DIR="$HOME/.config/sketchybar"
+PLUGIN_DIR="$SKETCHYBAR_DIR/plugins"
+ITEM_DIR="$SKETCHYBAR_DIR/items"
+COLOR_DIR="$SKETCHYBAR_DIR/colors"
 
 # Load current theme colors (symlinked by theme-switch or default to atomic)
 if [ -f "$COLOR_DIR/current.sh" ]; then
@@ -28,11 +29,11 @@ sketchybar --bar \
 sketchybar --default \
   padding_left=4 \
   padding_right=4 \
-  icon.font="JetBrains Mono Nerd Font:Bold:13.0" \
+  icon.font="JetBrainsMono Nerd Font:Bold:13.0" \
   icon.color=$TEXT \
   icon.padding_left=8 \
   icon.padding_right=4 \
-  label.font="JetBrains Mono Nerd Font:Regular:13.0" \
+  label.font="JetBrainsMono Nerd Font:Regular:13.0" \
   label.color=$TEXT \
   label.padding_left=4 \
   label.padding_right=8 \
