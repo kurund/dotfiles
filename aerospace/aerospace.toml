@@ -31,8 +31,8 @@ inner.horizontal = 8
 inner.vertical = 8
 outer.left = 20
 outer.right = 20
-outer.bottom = 20
-outer.top = 64
+outer.bottom = 30
+outer.top = 18
 
 # Main mode keybindings
 [mode.main.binding]
@@ -73,12 +73,9 @@ alt-shift-space = 'layout floating tiling'
 # Toggle layout (split orientation)
 alt-e = 'layout tiles horizontal vertical'
 
-# Split directions
-alt-b = 'split horizontal'
-alt-v = 'split vertical'
-
-# Focus parent
-alt-a = 'focus parent'
+# Join directions
+alt-b = 'join-with left'
+alt-v = 'join-with down'
 
 # Switch to workspace
 alt-1 = 'workspace 1'
@@ -113,5 +110,5 @@ h = 'resize width -50'
 j = 'resize height +50'
 k = 'resize height -50'
 l = 'resize width +50'
-escape = 'mode main'
+esc = 'mode main'
 enter = 'mode main'
