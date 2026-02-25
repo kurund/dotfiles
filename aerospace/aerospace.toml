@@ -1,5 +1,7 @@
 # AeroSpace — Tiling Window Manager for macOS
 
+start-at-login = true
+
 after-login-command = []
 after-startup-command = [
   'exec-and-forget borders',
@@ -30,7 +32,7 @@ inner.vertical = 8
 outer.left = 20
 outer.right = 20
 outer.bottom = 20
-outer.top = 52
+outer.top = 64
 
 # Main mode keybindings
 [mode.main.binding]
