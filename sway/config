@@ -21,9 +21,8 @@ set $menu rofi -show drun
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/src/contrib/Wallpaper-Bank/wallpapers/neon-spider-man-4k_3840x2160.jpg fill
+# Wallpaper via swww (replaces swaybg)
+exec_always swww-daemon && sleep 1 && swww img ~/src/contrib/Wallpaper-Bank/wallpapers/neon-spider-man-4k_3840x2160.jpg
 
 #
 # Example configuration:
@@ -238,10 +237,12 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    # bindsym Print exec grim
-    bindsym PRINT exec hyprshot -m region
-    bindsym Shift+PRINT exec hyprshot -m window
+
+    # Focused window screenshot
+    bindsym $mod+Shift+w exec grimshot save active ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S)_screenshot.png
+
+    # Region selection screenshot
+    bindsym $mod+Shift+r exec grimshot save area ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S)_screenshot.png
 
 #
 # Status Bar:

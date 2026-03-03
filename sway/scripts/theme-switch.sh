@@ -79,6 +79,16 @@ NVIM_THEME="${!nvim_theme_var}"
 mkdir -p "$CONFIG_DIR/nvim"
 echo "$NVIM_THEME" >"$CONFIG_DIR/nvim/.theme"
 
+# 11. Wallpaper via swww
+WALLPAPER_DIR="$HOME/src/contrib/Wallpaper-Bank/wallpapers"
+WALLPAPER_MAP_vaporwave="neon-spider-man-4k_3840x2160.jpg"
+WALLPAPER_MAP_atomic="neon-spider-man-4k_3840x2160.jpg"
+wallpaper_var="WALLPAPER_MAP_${THEME}"
+WALLPAPER="$WALLPAPER_DIR/${!wallpaper_var}"
+if [[ -f "$WALLPAPER" ]]; then
+    swww img "$WALLPAPER" --transition-type fade --transition-duration 1
+fi
+
 echo "Config files updated. Reloading services..."
 
 # Restart waybar (kill + relaunch, same as sway uses via swaybar_command)
