@@ -4,13 +4,12 @@
 
 - NeoVim editor
 - Tmux multiplexer
-- Ghostty terminal
-- Hyperland and related configs
+- Kitty terminal
+- Sway
+- Waybar
 
 ### Past configs
 
 - Starship shell prompt
 - Zellij multiplexer
-- Kitty terminal
 - Wezterm terminal
-- Alacritty terminal
