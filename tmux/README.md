@@ -2,4 +2,4 @@
 
 Tmux Plugin Manager
 
-https://github.com/tmux-plugins/tpm
+<https://github.com/tmux-plugins/tpm>

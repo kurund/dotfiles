@@ -86,7 +86,7 @@ WALLPAPER_MAP_atomic="neon-spider-man-4k_3840x2160.jpg"
 wallpaper_var="WALLPAPER_MAP_${THEME}"
 WALLPAPER="$WALLPAPER_DIR/${!wallpaper_var}"
 if [[ -f "$WALLPAPER" ]]; then
-    swww img "$WALLPAPER" --transition-type fade --transition-duration 1
+  swww img "$WALLPAPER" --transition-type fade --transition-duration 1
 fi
 
 echo "Config files updated. Reloading services..."

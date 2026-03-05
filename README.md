@@ -5,6 +5,7 @@
 - NeoVim editor
 - Tmux multiplexer
 - Kitty terminal
+- Ghostty terminal
 - Sway
 - Waybar
 
