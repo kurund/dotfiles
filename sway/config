@@ -282,7 +282,7 @@ include ~/.config/sway/atomic-theme
 # gaps outer 3
 
 gaps inner 8
-gaps outer 20
+gaps outer 5
 
 # Configure the default border:
 default_border pixel 2
