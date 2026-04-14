@@ -5,12 +5,14 @@ return {
       formatters = {
         phpcbf = function()
           return {
-            cmd = vim.env.HOME .. "/.config/composer/vendor/bin/phpcbf",
+            command = vim.env.HOME .. "/.config/composer/vendor/bin/phpcbf",
             args = {
               "--standard=" .. vim.g.php_standard,
               "-q",
+              "-",
             },
             stdin = true,
+            exit_codes = { 0, 1, 2 },
           }
         end,
       },
@@ -33,8 +35,13 @@ return {
               "--standard=" .. vim.g.php_standard,
               "-q",
               "--report=json",
+              function()
+                return "--stdin-path=" .. vim.fn.expand("%:p")
+              end,
+              "-",
             },
             stdin = true,
+            ignore_exitcode = true,
             parser = function(output)
               local ok, decoded = pcall(vim.fn.json_decode, output)
               if not ok then
