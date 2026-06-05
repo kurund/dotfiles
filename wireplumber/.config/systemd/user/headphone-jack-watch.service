@@ -1,0 +1,13 @@
+[Unit]
+Description=Auto-switch SOF analog audio profile on headphone jack plug/unplug
+After=wireplumber.service
+Wants=wireplumber.service
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/headphone-jack-watch
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

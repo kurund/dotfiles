@@ -93,3 +93,10 @@ if [[ "$(uname)" == Linux && -x ./greetd/install.sh ]]; then
   echo "Note: the greetd login screen is not stow-managed."
   echo "      Run ./greetd/install.sh to (re)install it."
 fi
+
+# wireplumber ships a udev rule (/etc) + user service for headphone auto-switch.
+if [[ "$(uname)" == Linux && -x ./wireplumber/install.sh ]]; then
+  echo
+  echo "Note: the wireplumber headphone-jack udev rule is not stow-managed."
+  echo "      Run ./wireplumber/install.sh to install it and enable the service."
+fi

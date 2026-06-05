@@ -1,0 +1,5 @@
+# Grant the active login session read access to the headphone-jack switch so
+# the user service headphone-jack-watch can read SW_HEADPHONE_INSERT events.
+# Scoped to this single input device via its name; uaccess applies an ACL for
+# whoever owns the active seat session.
+SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="sof-hda-dsp Headphone", TAG+="uaccess"

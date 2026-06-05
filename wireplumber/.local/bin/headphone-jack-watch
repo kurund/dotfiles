@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+"""Switch the Intel SOF card's analog output on headphone-jack plug/unplug.
+
+This laptop's sof-hda-dsp card exposes the internal speaker and the headphone
+jack as two *mutually exclusive* UCM "HiFi" profiles, and nothing auto-switches
+between them. Both profiles keep the HDMI/DisplayPort outputs available, so we
+stay on UCM (HDMI keeps working) and just flip the analog half here:
+
+    jack plugged   -> HiFi (... Headphones ...)  + default sink = Headphones
+    jack unplugged -> HiFi (... Speaker ...)      + default sink = Speaker
+
+The jack is a kernel input switch (SW_HEADPHONE_INSERT) on the input device
+named "sof-hda-dsp Headphone". We read it via evdev directly (no extra Python
+packages); read access comes from the uaccess udev rule installed by install.sh.
+"""
+import fcntl
+import glob
+import os
+import struct
+import subprocess
+import time
+
+JACK_NAME = "sof-hda-dsp Headphone"
+CARD = "alsa_card.pci-0000_00_1f.3-platform-skl_hda_dsp_generic"
+PROFILE_HP = "HiFi (HDMI1, HDMI2, HDMI3, Headphones, Mic1, Mic2)"
+PROFILE_SPK = "HiFi (HDMI1, HDMI2, HDMI3, Mic1, Mic2, Speaker)"
+PREFIX = "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic"
+SINK_HP = f"{PREFIX}.HiFi__Headphones__sink"
+SINK_SPK = f"{PREFIX}.HiFi__Speaker__sink"
+
+EV_SW = 0x05
+SW_HEADPHONE_INSERT = 0x02
+# struct input_event = timeval(2*long) + type(u16) + code(u16) + value(s32)
+EV_FMT = "llHHi"
+EV_SIZE = struct.calcsize(EV_FMT)
+
+
+def _ioc(direction, type_char, nr, size):
+    return (direction << 30) | (size << 16) | (ord(type_char) << 8) | nr
+
+
+def EVIOCGSW(length):
+    return _ioc(2, "E", 0x1B, length)  # _IOC_READ = 2
+
+
+def find_jack_device():
+    for path in sorted(glob.glob("/sys/class/input/event*")):
+        try:
+            name = open(os.path.join(path, "device", "name")).read().strip()
+        except OSError:
+            continue
+        if name == JACK_NAME:
+            return "/dev/input/" + os.path.basename(path)
+    return None
+
+
+def jack_plugged(fd):
+    buf = bytearray(8)
+    fcntl.ioctl(fd, EVIOCGSW(len(buf)), buf)
+    return bool(buf[SW_HEADPHONE_INSERT // 8] & (1 << (SW_HEADPHONE_INSERT % 8)))
+
+
+def run(*args):
+    subprocess.run(args, check=False,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+def wait_for_pipewire():
+    for _ in range(60):
+        if subprocess.run(["pactl", "info"], stdout=subprocess.DEVNULL,
+                          stderr=subprocess.DEVNULL).returncode == 0:
+            return
+        time.sleep(1)
+
+
+def apply(plugged):
+    if plugged:
+        run("pactl", "set-card-profile", CARD, PROFILE_HP)
+        run("pactl", "set-default-sink", SINK_HP)
+    else:
+        run("pactl", "set-card-profile", CARD, PROFILE_SPK)
+        run("pactl", "set-default-sink", SINK_SPK)
+    print("jack " + ("plugged -> headphones" if plugged else "unplugged -> speaker"),
+          flush=True)
+
+
+def main():
+    wait_for_pipewire()
+    while True:
+        dev = find_jack_device()
+        if not dev:
+            print("headphone jack device not found; retrying in 5s", flush=True)
+            time.sleep(5)
+            continue
+        try:
+            f = open(dev, "rb", buffering=0)
+        except OSError as e:
+            print(f"cannot open {dev}: {e}; retrying in 5s", flush=True)
+            time.sleep(5)
+            continue
+        with f:
+            apply(jack_plugged(f.fileno()))  # sync to current state at startup
+            while True:
+                data = f.read(EV_SIZE)
+                if not data or len(data) < EV_SIZE:
+                    break  # device went away (suspend / unbind)
+                _sec, _usec, etype, code, value = struct.unpack(EV_FMT, data)
+                if etype == EV_SW and code == SW_HEADPHONE_INSERT:
+                    apply(bool(value))
+        print("jack device closed; reattaching", flush=True)
+        time.sleep(2)
+
+
+if __name__ == "__main__":
+    main()
