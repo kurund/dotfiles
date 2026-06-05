@@ -1,2 +1,6 @@
-tmux/plugins/
+# tmux plugin manager (TPM) installs here
+tmux/.config/tmux/plugins/
+
+# niri config backups (old location + new stow layout)
 niri/config.kdl.*
+niri/.config/niri/config.kdl.*
