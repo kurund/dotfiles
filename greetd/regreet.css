@@ -1,0 +1,76 @@
+/* ReGreet — atomic theme (teal #2fb8b0 / orange #e05a2d, base #0d1b22) */
+
+/* Color tokens */
+@define-color atomic_base   #0d1b22;
+@define-color atomic_card   rgba(42, 20, 15, 0.80);
+@define-color atomic_teal   #2fb8b0;
+@define-color atomic_orange #e05a2d;
+@define-color atomic_gold   #b5482c;
+@define-color atomic_text   #f5ecd7;
+
+/* Top-level clock label sits over the wallpaper */
+label {
+    color: @atomic_text;
+}
+
+/* Greeting + clock readability over the photo */
+.clock, #clock {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: @atomic_text;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+/* The central login card — translucent dark with a teal edge */
+box.horizontal > box,
+window > box > box,
+.greeter-box {
+    background-color: @atomic_card;
+    border: 2px solid @atomic_gold;
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+/* Text entries (username / password) */
+entry {
+    background-color: rgba(36, 18, 14, 0.92);
+    color: @atomic_text;
+    border: 1px solid @atomic_gold;
+    border-radius: 8px;
+    padding: 8px 12px;
+    caret-color: @atomic_gold;
+}
+entry:focus, entry:focus-within {
+    border-color: @atomic_gold;
+    box-shadow: 0 0 0 2px rgba(181, 72, 44, 0.5);
+}
+
+/* Session / user dropdowns */
+combobox, dropdown, button.combo {
+    color: @atomic_text;
+}
+combobox button, dropdown button {
+    background-color: rgba(36, 18, 14, 0.92);
+    color: @atomic_text;
+    border: 1px solid @atomic_gold;
+    border-radius: 8px;
+}
+
+/* Buttons — autumn rust/terracotta */
+button {
+    background-image: none;
+    background-color: @atomic_gold;
+    color: @atomic_base;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #d05c38;
+    color: @atomic_base;
+}
+button:active {
+    background-color: #913820;
+}

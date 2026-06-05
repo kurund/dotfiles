@@ -1,0 +1,26 @@
+# ReGreet configuration — atomic theme (teal/orange, catppuccin-mocha-peach)
+
+[background]
+path = "/etc/greetd/wallpaper.jpg"
+# Cover = scale to fill screen, cropping overflow (no letterboxing)
+fit = "Cover"
+
+[GTK]
+# Match the running desktop GTK look
+application_prefer_dark_theme = true
+cursor_theme_name = "Bibata-Modern-Ice"
+font_name = "JetBrainsMono Nerd Font 11"
+icon_theme_name = "Adwaita"
+theme_name = "catppuccin-mocha-peach-standard+default"
+
+[appearance]
+greeting_msg = "Welcome back, Kurund"
+
+[widget.clock]
+format = "%A, %B %e   %H:%M"
+resolution = "1s"
+label_width = 400
+
+[commands]
+reboot = [ "systemctl", "reboot" ]
+poweroff = [ "systemctl", "poweroff" ]

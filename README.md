@@ -8,6 +8,7 @@
 - Ghostty terminal
 - Sway
 - Waybar
+- greetd + ReGreet login screen
 
 ### Past configs
 

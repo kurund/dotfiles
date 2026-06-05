@@ -1,0 +1,10 @@
+[terminal]
+# The VT to run the greeter on.
+vt = 1
+
+# The default session (the greeter itself): ReGreet running inside the cage
+# kiosk compositor. ReGreet reads /usr/share/wayland-sessions, so gnome / niri /
+# sway all show in its session dropdown.
+[default_session]
+command = "cage -s -- regreet"
+user = "greeter"
