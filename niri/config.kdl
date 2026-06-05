@@ -346,6 +346,15 @@ window-rule {
     clip-to-geometry true
 }
 
+// Named workspaces persist even when empty (dynamic/unnamed ones are
+// auto-removed when they become empty)
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
+workspace "6"
+
 // Remove windows decorations
 prefer-no-csd
 
