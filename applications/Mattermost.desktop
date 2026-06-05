@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Mattermost
+Comment=Mattermost Desktop application for Linux
+Exec="/opt/mattermost-desktop-5.5.1-linux-x64/mattermost-desktop" --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations
+Terminal=false
+Type=Application
+Icon=/opt/mattermost-desktop-5.5.1-linux-x64/app_icon.png
+Categories=Network;InstantMessaging;
