@@ -55,6 +55,7 @@ declare -A PKG=(
   [tmux]="tmux"
   [zellij]="zellij"
   [starship]="starship"
+  [wireplumber]="wireplumber"
   [applications]="OS:linux"   # .desktop launchers, Linux only
 )
 
