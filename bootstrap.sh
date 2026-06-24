@@ -32,31 +32,32 @@ if ! command -v stow >/dev/null 2>&1; then
   exit 1
 fi
 
-# package -> detection spec:
+# package:spec entries (kept as a plain list so this works on bash 3.2, which
+# ships with macOS and lacks associative arrays). Spec is one of:
 #   space-separated binary candidates (linked if ANY is found on PATH), or
 #   OS:linux / OS:darwin to gate by operating system, or
 #   always to link unconditionally.
-declare -A PKG=(
-  [niri]="niri"
-  [sway]="sway"
-  [hypr]="hyprland"
-  [waybar]="waybar"
-  [swaync]="swaync"
-  [swaylock]="swaylock"
-  [wlogout]="wlogout"
-  [rofi]="rofi"
-  [cava]="cava"
-  [waypaper]="waypaper"
-  [kitty]="kitty"
-  [ghostty]="ghostty"
-  [wezterm]="wezterm"
-  [nvim]="nvim"
-  [helix]="hx helix"
-  [tmux]="tmux"
-  [zellij]="zellij"
-  [starship]="starship"
-  [wireplumber]="wireplumber"
-  [applications]="OS:linux"   # .desktop launchers, Linux only
+PKGS=(
+  "applications:OS:linux"   # .desktop launchers, Linux only
+  "cava:cava"
+  "ghostty:ghostty"
+  "helix:hx helix"
+  "hypr:hyprland"
+  "kitty:kitty"
+  "nvim:nvim"
+  "niri:niri"
+  "rofi:rofi"
+  "starship:starship"
+  "sway:sway"
+  "swaylock:swaylock"
+  "swaync:swaync"
+  "tmux:tmux"
+  "waybar:waybar"
+  "waypaper:waypaper"
+  "wezterm:wezterm"
+  "wireplumber:wireplumber"
+  "wlogout:wlogout"
+  "zellij:zellij"
 )
 
 detected() {
@@ -70,8 +71,10 @@ detected() {
 }
 
 linked=() skipped=()
-for pkg in $(printf '%s\n' "${!PKG[@]}" | sort); do
-  if detected "${PKG[$pkg]}"; then
+for entry in "${PKGS[@]}"; do
+  pkg="${entry%%:*}"
+  spec="${entry#*:}"
+  if detected "$spec"; then
     if [[ $DRY_RUN == 1 ]]; then
       stow -nv --target="$HOME" --restow "$pkg" 2>&1 | sed "s/^/  [$pkg] /" || true
     else
