@@ -21,9 +21,12 @@ cd "$DIR"
 
 DRY_RUN=0
 case "${1:-}" in
-  -n|--dry-run) DRY_RUN=1 ;;
-  "") ;;
-  *) echo "usage: $0 [-n|--dry-run]" >&2; exit 2 ;;
+-n | --dry-run) DRY_RUN=1 ;;
+"") ;;
+*)
+  echo "usage: $0 [-n|--dry-run]" >&2
+  exit 2
+  ;;
 esac
 
 if ! command -v stow >/dev/null 2>&1; then
@@ -38,9 +41,10 @@ fi
 #   OS:linux / OS:darwin to gate by operating system, or
 #   always to link unconditionally.
 PKGS=(
-  "applications:OS:linux"   # .desktop launchers, Linux only
+  "applications:OS:linux" # .desktop launchers, Linux only
   "cava:cava"
   "ghostty:ghostty"
+  "herdr:herdr"
   "helix:hx helix"
   "hypr:hyprland"
   "kitty:kitty"
@@ -63,10 +67,13 @@ PKGS=(
 detected() {
   local spec="$1" bin
   case "$spec" in
-    always)    return 0 ;;
-    OS:linux)  [[ "$(uname)" == Linux  ]] ;;
-    OS:darwin) [[ "$(uname)" == Darwin ]] ;;
-    *) for bin in $spec; do command -v "$bin" >/dev/null 2>&1 && return 0; done; return 1 ;;
+  always) return 0 ;;
+  OS:linux) [[ "$(uname)" == Linux ]] ;;
+  OS:darwin) [[ "$(uname)" == Darwin ]] ;;
+  *)
+    for bin in $spec; do command -v "$bin" >/dev/null 2>&1 && return 0; done
+    return 1
+    ;;
   esac
 }
 
