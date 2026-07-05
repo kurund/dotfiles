@@ -31,6 +31,7 @@ stow-managed — see [`greetd/`](greetd/) and run `greetd/install.sh`.
 - niri (Wayland compositor)
 - Waybar, swaync, swaylock, rofi, wlogout, cava
 - greetd + ReGreet login screen
+- Herdr multiplexer
 
 ### Past configs
 
