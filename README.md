@@ -27,6 +27,7 @@ stow-managed — see [`greetd/`](greetd/) and run `greetd/install.sh`.
 
 - Nushell shell + Starship prompt
 - NeoVim editor
+- Jujutsu (jj) + side-by-side diffs via [delta](https://github.com/dandavison/delta)
 - Tmux multiplexer
 - Kitty / Ghostty terminals
 - niri (Wayland compositor)
@@ -53,6 +54,33 @@ To make it the login shell:
 ```sh
 echo "$(command -v nu)" | sudo tee -a /etc/shells
 chsh -s "$(command -v nu)"
+```
+
+### Jujutsu
+
+`jj/.config/jj/config.toml` is shared across machines, so the identity in it is
+the default. To commit as someone else on a given machine, drop an override in
+`~/.config/jj/conf.d/` — that directory is read after `config.toml` and is not
+stow-managed, so it stays machine-local:
+
+```sh
+mkdir -p ~/.config/jj/conf.d
+cat > ~/.config/jj/conf.d/10-identity.toml <<'EOF'
+[user]
+name = "Kurund Jalmi"
+email = "other@example.com"
+EOF
+```
+
+Note that `jj config set --user` writes to the shared `config.toml`, not to
+`conf.d/` — edit those files directly. For a per-repo rather than per-machine
+split, use a conditional scope in `config.toml` instead:
+
+```toml
+[[--scope]]
+--when.repositories = ["~/work"]
+[--scope.user]
+email = "work@example.com"
 ```
 
 ### Past configs

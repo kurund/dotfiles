@@ -47,6 +47,7 @@ PKGS=(
   "herdr:herdr"
   "helix:hx helix"
   "hypr:hyprland"
+  "jj:jj"
   "kitty:kitty"
   "nvim:nvim"
   "niri:niri"

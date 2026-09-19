@@ -10,3 +10,6 @@ nushell/.config/nushell/history.txt
 nushell/.config/nushell/history.sqlite3*
 nushell/.config/nushell/plugin.msgpackz
 nushell/.config/nushell/nu.log
+
+# jj keeps per-repo state next to the user config
+jj/.config/jj/repos/
