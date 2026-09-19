@@ -25,7 +25,7 @@ stow-managed — see [`greetd/`](greetd/) and run `greetd/install.sh`.
 
 ### Current setup
 
-- Nushell shell
+- Nushell shell + Starship prompt
 - NeoVim editor
 - Tmux multiplexer
 - Kitty / Ghostty terminals
@@ -38,6 +38,10 @@ stow-managed — see [`greetd/`](greetd/) and run `greetd/install.sh`.
 
 Config lives at `nushell/.config/nushell/` (`env.nu` for PATH and exported
 variables, `config.nu` for settings, aliases and custom commands).
+
+The prompt is [starship](starship/.config/starship.toml). Its nushell init
+script hard-codes the path to the binary, so `env.nu` generates it into
+`~/.cache/nushell/starship.nu` on first start instead of tracking it here.
 
 On macOS nushell reads `~/Library/Application Support/nushell`, not
 `~/.config/nushell`, so `bootstrap.sh` symlinks the former to the latter after
@@ -54,6 +58,5 @@ chsh -s "$(command -v nu)"
 ### Past configs
 
 - Sway, Hyprland
-- Starship shell prompt
 - Zellij multiplexer
 - Wezterm terminal

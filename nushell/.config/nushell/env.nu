@@ -56,23 +56,13 @@ $env.NVIM_THEME = "atomic"
 $env.TMUX_THEME = "nord"
 $env.UV_PREVIEW = "1"
 
-# ----------------------------------------------------------- completions ---
+# ---------------------------------------------------------------- prompt ---
 
-# Completion scripts for third-party tools are generated once into the cache
-# dir and sourced by config.nu. Run `refresh-completions` after upgrading a
-# tool to pick up its new flags.
-const completion_dir = ("~/.cache/nushell/completions" | path expand)
+# starship's init script hard-codes the absolute path to the binary, so it is
+# generated per machine rather than committed. Delete the file to rebuild it.
+const starship_init = ("~/.cache/nushell/starship.nu" | path expand)
 
-mkdir $completion_dir
-
-for tool in [[bin, file, generate]; [jj, jj.nu, "jj util completion nushell"]] {
-    let out = ($completion_dir | path join $tool.file)
-    if not ($out | path exists) {
-        if (which $tool.bin | is-not-empty) {
-            nu -c $tool.generate | save -f $out
-        } else {
-            # Stub: keeps `source` in config.nu valid when the tool is missing.
-            "" | save -f $out
-        }
-    }
+if not ($starship_init | path exists) {
+    mkdir ($starship_init | path dirname)
+    starship init nu | save -f $starship_init
 }
