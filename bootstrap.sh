@@ -50,6 +50,7 @@ PKGS=(
   "kitty:kitty"
   "nvim:nvim"
   "niri:niri"
+  "nushell:nu"
   "rofi:rofi"
   "starship:starship"
   "sway:sway"
@@ -96,6 +97,27 @@ done
 echo
 echo "Linked : ${linked[*]:-(none)}"
 echo "Skipped: ${skipped[*]:-(none)}  (app not installed / wrong OS)"
+
+# On macOS nushell looks for its config in ~/Library/Application Support/nushell
+# rather than ~/.config/nushell, so point the former at the latter.
+if [[ "$(uname)" == Darwin ]] && command -v nu >/dev/null 2>&1; then
+  nu_xdg="$HOME/.config/nushell"
+  nu_mac="$HOME/Library/Application Support/nushell"
+  if [[ -L "$nu_mac" ]]; then
+    : # already a symlink, assume ours
+  elif [[ -e "$nu_mac" ]]; then
+    echo
+    echo "Note: $nu_mac exists and is not a symlink."
+    echo "      Move it aside, then re-run to link it to $nu_xdg."
+  elif [[ $DRY_RUN == 1 ]]; then
+    echo
+    echo "  [nushell] WOULD LINK: $nu_mac -> $nu_xdg"
+  else
+    ln -s "$nu_xdg" "$nu_mac"
+    echo
+    echo "LINK: $nu_mac -> $nu_xdg"
+  fi
+fi
 
 # greetd lives in /etc (root-owned) and cannot be stowed; install separately.
 if [[ "$(uname)" == Linux && -x ./greetd/install.sh ]]; then

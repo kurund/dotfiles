@@ -4,3 +4,9 @@ tmux/.config/tmux/plugins/
 # niri config backups (old location + new stow layout)
 niri/config.kdl.*
 niri/.config/niri/config.kdl.*
+
+# nushell writes its history/plugin state into the (stowed) config dir
+nushell/.config/nushell/history.txt
+nushell/.config/nushell/history.sqlite3*
+nushell/.config/nushell/plugin.msgpackz
+nushell/.config/nushell/nu.log

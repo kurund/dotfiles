@@ -25,6 +25,7 @@ stow-managed — see [`greetd/`](greetd/) and run `greetd/install.sh`.
 
 ### Current setup
 
+- Nushell shell
 - NeoVim editor
 - Tmux multiplexer
 - Kitty / Ghostty terminals
@@ -32,6 +33,23 @@ stow-managed — see [`greetd/`](greetd/) and run `greetd/install.sh`.
 - Waybar, swaync, swaylock, rofi, wlogout, cava
 - greetd + ReGreet login screen
 - Herdr multiplexer
+
+### Nushell
+
+Config lives at `nushell/.config/nushell/` (`env.nu` for PATH and exported
+variables, `config.nu` for settings, aliases and custom commands).
+
+On macOS nushell reads `~/Library/Application Support/nushell`, not
+`~/.config/nushell`, so `bootstrap.sh` symlinks the former to the latter after
+stowing. Nushell writes its history and plugin state next to the config, so
+those files are gitignored.
+
+To make it the login shell:
+
+```sh
+echo "$(command -v nu)" | sudo tee -a /etc/shells
+chsh -s "$(command -v nu)"
+```
 
 ### Past configs
 
