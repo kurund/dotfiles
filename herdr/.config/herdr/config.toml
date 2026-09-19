@@ -10,7 +10,7 @@ onboarding = false
 # Built-in themes: catppuccin, terminal, tokyo-night, dracula, nord,
 #                  gruvbox, one-dark, solarized, kanagawa, rose-pine,
 #                  vesper
-name = "dracula"
+name = "gruvbox"
 
 # Follow host terminal light/dark appearance and switch Herdr UI themes.
 # Existing manual behavior is unchanged unless this is true.
@@ -133,6 +133,9 @@ auto_switch = false
 # directory = "~/.herdr/worktrees"
 
 [ui]
+# Agent state markers in the sidebar: "dots" or "text".
+status_indicators = "dots"
+
 # Sidebar width (auto-scaled based on workspace names, this sets the default)
 # sidebar_width = 26
 
@@ -193,7 +196,7 @@ auto_switch = false
 # herdr = show in-app toasts
 # terminal = ask the outer terminal to show a desktop notification
 # system = ask the OS notification service directly
-# delivery = "off"
+delivery = "off"
 # delay_seconds = 1
 
 [ui.toast.herdr]
