@@ -56,6 +56,17 @@ $env.NVIM_THEME = "atomic"
 $env.TMUX_THEME = "nord"
 $env.UV_PREVIEW = "1"
 
+# ------------------------------------------------------------ completions ---
+
+# Generated per machine so they track the installed binary, like the starship
+# init below. Delete a file to rebuild it.
+const jj_completions = ("~/.cache/nushell/completions-jj.nu" | path expand)
+
+if not ($jj_completions | path exists) {
+    mkdir ($jj_completions | path dirname)
+    jj util completion nushell | save -f $jj_completions
+}
+
 # ---------------------------------------------------------------- prompt ---
 
 # starship's init script hard-codes the absolute path to the binary, so it is
