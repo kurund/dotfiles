@@ -6,11 +6,6 @@ return {
     priority = 1000,
   },
   {
-    "nyoom-engineering/oxocarbon.nvim",
-    name = "oxocarbon",
-    priority = 1000,
-  },
-  {
     "slugbyte/lackluster.nvim",
     name = "lackluster-hack",
     priority = 1000,
