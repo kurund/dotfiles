@@ -13,3 +13,7 @@ nushell/.config/nushell/nu.log
 
 # jj keeps per-repo state next to the user config
 jj/.config/jj/repos/
+
+# herdr writes logs, sockets and session state into the (stowed) config dir
+herdr/.config/herdr/*
+!herdr/.config/herdr/config.toml
