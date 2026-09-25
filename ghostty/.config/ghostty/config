@@ -1,4 +1,3 @@
-theme = Oxocarbon
 
 # font-family = CommitMono
 font-family = Maple Mono
@@ -17,3 +16,4 @@ confirm-close-surface = false
 mouse-hide-while-typing = true
 resize-overlay = never
 cursor-style = underline
+theme = noctalia

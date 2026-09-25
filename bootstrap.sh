@@ -46,7 +46,6 @@ PKGS=(
   "ghostty:ghostty"
   "herdr:herdr"
   "helix:hx helix"
-  "hypr:hyprland"
   "jj:jj"
   "kitty:kitty"
   "nvim:nvim"
@@ -54,16 +53,7 @@ PKGS=(
   "nushell:nu"
   "rofi:rofi"
   "starship:starship"
-  "sway:sway"
-  "swaylock:swaylock"
-  "swaync:swaync"
   "tmux:tmux"
-  "waybar:waybar"
-  "waypaper:waypaper"
-  "wezterm:wezterm"
-  "wireplumber:wireplumber"
-  "wlogout:wlogout"
-  "zellij:zellij"
 )
 
 detected() {
