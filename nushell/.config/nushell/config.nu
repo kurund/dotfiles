@@ -14,7 +14,7 @@ $env.config.ls.use_ls_colors = true
 $env.config.table.mode = "rounded"
 $env.config.table.index_mode = "auto"
 
-$env.config.completions.algorithm = "fuzzy"
+#$env.config.completions.algorithm = "fuzzy"
 $env.config.completions.case_sensitive = false
 $env.config.completions.partial = true
 $env.config.completions.quick = true
