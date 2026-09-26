@@ -38,10 +38,10 @@ fi
 # package:spec entries (kept as a plain list so this works on bash 3.2, which
 # ships with macOS and lacks associative arrays). Spec is one of:
 #   space-separated binary candidates (linked if ANY is found on PATH), or
-#   OS:linux / OS:darwin to gate by operating system, or
+#   OS:linux / OS:arch / OS:darwin to gate by operating system, or
 #   always to link unconditionally.
 PKGS=(
-  "applications:OS:linux" # .desktop launchers, Linux only
+  "applications:OS:arch" # .desktop launchers for /opt installs, Arch only
   "cava:cava"
   "ghostty:ghostty"
   "herdr:herdr"
@@ -61,6 +61,7 @@ detected() {
   case "$spec" in
   always) return 0 ;;
   OS:linux) [[ "$(uname)" == Linux ]] ;;
+  OS:arch) [[ -f /etc/arch-release ]] ;;
   OS:darwin) [[ "$(uname)" == Darwin ]] ;;
   *)
     for bin in $spec; do command -v "$bin" >/dev/null 2>&1 && return 0; done
