@@ -1,0 +1,138 @@
+[bar.default]
+center = [ "clock", "weather" ]
+end = [
+    "audio_visualizer",
+    "media",
+    "ram",
+    "cpu",
+    "tray",
+    "notifications",
+    "clipboard",
+    "keyboard_layout",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "session"
+]
+start = [ "wallpaper", "workspaces" ]
+
+[calendar]
+
+[control_center.calendar]
+show_events_card = false
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1197.3333740234375
+    output = "DP-2"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 854.0
+    cy = 778.0
+    output = "eDP-1"
+    placement_height = 960.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[theme]
+community_palette = "Oxocarbon"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "ghostty", "kitty", "niri", "starship" ]
+    community_ids = [ "claude-code", "obsidian", "fuzzel", "fastfetch", "bat", "tmux" ]
+
+[wallpaper]
+directory = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers"
+
+    [wallpaper.default]
+    path = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers/City-Rain.png"
+
+    [wallpaper.last]
+    path = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers/City-Rain.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers/City-Rain.png"
+
+[widget.brightness]
+enabled = false
+
+[widget.clock]
+format = "{:%a %d %b}, {:%H:%M}"
+
+[widget.control-center]
+enabled = false
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.network]
+show_label = false

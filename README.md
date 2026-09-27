@@ -30,7 +30,7 @@ stow-managed — see [`greetd/`](greetd/) and run `greetd/install.sh`.
 - Jujutsu (jj) + side-by-side diffs via [delta](https://github.com/dandavison/delta)
 - Tmux multiplexer
 - Kitty / Ghostty terminals
-- niri (Wayland compositor)
+- niri (Wayland compositor) + Noctalia shell
 - Waybar, swaync, swaylock, rofi, wlogout, cava
 - greetd + ReGreet login screen
 - Herdr multiplexer

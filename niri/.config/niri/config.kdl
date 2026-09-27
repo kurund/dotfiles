@@ -656,3 +656,5 @@ binds {
 }
 
 
+
+include "noctalia.kdl"
