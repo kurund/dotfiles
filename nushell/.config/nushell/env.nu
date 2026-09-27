@@ -38,6 +38,7 @@ path-prepend [
 
 path-append [
     "~/.cargo/bin"
+    "/usr/local/bin"
     # conda has no nushell hook: this makes the `conda` binary callable, but
     # `conda activate` does not work — use `nu -e` from a conda-aware shell.
     "/opt/anaconda3/condabin"
