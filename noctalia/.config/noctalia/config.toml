@@ -11,6 +11,7 @@ end = [
     "keyboard_layout",
     "network",
     "bluetooth",
+    "caffeine",
     "volume",
     "brightness",
     "battery",
@@ -126,7 +127,7 @@ wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "ghostty", "kitty", "niri", "starship" ]
-    community_ids = [ "claude-code", "obsidian", "fuzzel", "fastfetch", "bat", "tmux" ]
+    community_ids = [ "claude-code", "neovim", "obsidian", "fuzzel", "fastfetch", "bat", "lazygit", "tmux" ]
 
 [wallpaper]
 directory = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers"
@@ -137,17 +138,14 @@ directory = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers"
     [wallpaper.last]
     path = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers/City-Rain.png"
 
+    [wallpaper.monitors.DP-2]
+    path = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers/City-Rain.png"
+
     [wallpaper.monitors.eDP-1]
     path = "/home/kurund/src/contrib/Wallpaper-Bank/wallpapers/City-Rain.png"
 
-[widget.brightness]
-enabled = false
-
 [widget.clock]
 format = "{:%a %d %b}, {:%H:%M}"
-
-[widget.control-center]
-enabled = false
 
 [widget.media]
 hide_when_no_media = true
