@@ -20,19 +20,15 @@ To add a new app: create `pkg/.config/pkg/...` (or whatever path it needs
 under `$HOME`), add a `[pkg]="binary"` line to the manifest in `bootstrap.sh`,
 and run `./bootstrap.sh`.
 
-The **greetd** login screen lives in `/etc` (root-owned) and is _not_
-stow-managed — see [`greetd/`](greetd/) and run `greetd/install.sh`.
-
 ### Current setup
 
 - Nushell shell + Starship prompt
 - NeoVim editor
 - Jujutsu (jj) + side-by-side diffs via [delta](https://github.com/dandavison/delta)
 - Tmux multiplexer
-- Kitty / Ghostty terminals
+- Kitty / Ghostty / Wezterm terminals
 - niri (Wayland compositor) + Noctalia shell
-- Waybar, swaync, swaylock, rofi, wlogout, cava
-- greetd + ReGreet login screen
+- Fuzzel launcher
 - Herdr multiplexer
 
 ### Nushell
@@ -86,5 +82,7 @@ email = "work@example.com"
 ### Past configs
 
 - Sway, Hyprland
+- Waybar, swaync, swaylock, wlogout, rofi, DankMaterialShell
+- greetd + ReGreet login screen
+- Helix editor, cava
 - Zellij multiplexer
-- Wezterm terminal

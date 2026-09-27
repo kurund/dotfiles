@@ -1,3 +1,0 @@
-# Not symlinked into $HOME — these are root-owned bits installed by install.sh.
-^/install\.sh$
-^/etc$

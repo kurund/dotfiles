@@ -41,10 +41,9 @@ fi
 #   OS:linux / OS:darwin to gate by operating system, or
 #   always to link unconditionally.
 PKGS=(
-  "cava:cava"
+  "fuzzel:fuzzel"
   "ghostty:ghostty"
   "herdr:herdr"
-  "helix:hx helix"
   "jj:jj"
   "kitty:kitty"
   "nvim:nvim"
@@ -54,6 +53,7 @@ PKGS=(
   "rofi:rofi"
   "starship:starship"
   "tmux:tmux"
+  "wezterm:wezterm"
 )
 
 detected() {
@@ -61,7 +61,6 @@ detected() {
   case "$spec" in
   always) return 0 ;;
   OS:linux) [[ "$(uname)" == Linux ]] ;;
-  OS:arch) [[ -f /etc/arch-release ]] ;;
   OS:darwin) [[ "$(uname)" == Darwin ]] ;;
   *)
     for bin in $spec; do command -v "$bin" >/dev/null 2>&1 && return 0; done
@@ -110,17 +109,3 @@ if [[ "$(uname)" == Darwin ]] && command -v nu >/dev/null 2>&1; then
     echo "LINK: $nu_mac -> $nu_xdg"
   fi
 fi
-
-# greetd lives in /etc (root-owned) and cannot be stowed; install separately.
-# if [[ "$(uname)" == Linux && -x ./greetd/install.sh ]]; then
-#   echo
-#   echo "Note: the greetd login screen is not stow-managed."
-#   echo "      Run ./greetd/install.sh to (re)install it."
-# fi
-
-# wireplumber ships a udev rule (/etc) + user service for headphone auto-switch.
-# if [[ "$(uname)" == Linux && -x ./wireplumber/install.sh ]]; then
-#   echo
-#   echo "Note: the wireplumber headphone-jack udev rule is not stow-managed."
-#   echo "      Run ./wireplumber/install.sh to install it and enable the service."
-# fi
