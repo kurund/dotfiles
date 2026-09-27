@@ -38,10 +38,9 @@ fi
 # package:spec entries (kept as a plain list so this works on bash 3.2, which
 # ships with macOS and lacks associative arrays). Spec is one of:
 #   space-separated binary candidates (linked if ANY is found on PATH), or
-#   OS:linux / OS:arch / OS:darwin to gate by operating system, or
+#   OS:linux / OS:darwin to gate by operating system, or
 #   always to link unconditionally.
 PKGS=(
-  "applications:OS:arch" # .desktop launchers for /opt installs, Arch only
   "cava:cava"
   "ghostty:ghostty"
   "herdr:herdr"
@@ -50,6 +49,7 @@ PKGS=(
   "kitty:kitty"
   "nvim:nvim"
   "niri:niri"
+  "noctalia:noctalia"
   "nushell:nu"
   "rofi:rofi"
   "starship:starship"
