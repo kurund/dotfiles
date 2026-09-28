@@ -68,6 +68,20 @@ if not ($jj_completions | path exists) {
     jj util completion nushell | save -f $jj_completions
 }
 
+const carapace_init = ("~/.cache/nushell/carapace.nu" | path expand)
+let has_carapace = (which carapace | is-not-empty)
+
+# Without carapace an empty file is written so config.nu's `source` still
+# parses; it is replaced once carapace is installed.
+if not ($carapace_init | path exists) or ($has_carapace and (open --raw $carapace_init | is-empty)) {
+    mkdir ($carapace_init | path dirname)
+    if $has_carapace {
+        carapace _carapace nushell | save -f $carapace_init
+    } else {
+        "" | save -f $carapace_init
+    }
+}
+
 # ---------------------------------------------------------------- prompt ---
 
 # starship's init script hard-codes the absolute path to the binary, so it is
