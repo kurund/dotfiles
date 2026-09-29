@@ -53,7 +53,7 @@ path-append [
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
 
-$env.NVIM_THEME = "atomic"
+$env.NVIM_THEME = "tokyonight-moon"
 $env.TMUX_THEME = "nord"
 $env.UV_PREVIEW = "1"
 
