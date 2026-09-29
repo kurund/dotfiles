@@ -15,5 +15,6 @@ window-padding-balance = false
 confirm-close-surface = false
 mouse-hide-while-typing = true
 resize-overlay = never
-cursor-style = underline
+cursor-style = block
+cursor-style-blink = true
 theme = noctalia
