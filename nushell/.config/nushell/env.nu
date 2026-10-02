@@ -27,6 +27,7 @@ def --env path-append [paths: list<string>] {
 
 $env.ASDF_DATA_DIR = ($env.HOME | path join ".asdf")
 $env.ANDROID_HOME = ($env.HOME | path join "Library/Android/sdk")
+$env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
 
 # Listed highest-priority first.
 path-prepend [
@@ -38,6 +39,7 @@ path-prepend [
 
 path-append [
     "~/.cargo/bin"
+    $env.PNPM_HOME
     "/usr/local/bin"
     # conda has no nushell hook: this makes the `conda` binary callable, but
     # `conda activate` does not work — use `nu -e` from a conda-aware shell.

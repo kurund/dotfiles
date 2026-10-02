@@ -33,7 +33,6 @@ $env.config.shell_integration.osc133 = true
 
 alias vim = nvim
 alias nv = nvim
-alias project = node ~/src/project/dist/index.js
 
 # ------------------------------------------------------- custom commands ---
 
