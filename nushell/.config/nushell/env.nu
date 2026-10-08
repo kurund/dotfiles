@@ -59,6 +59,9 @@ $env.NVIM_THEME = "tokyonight-moon"
 $env.TMUX_THEME = "nord"
 $env.UV_PREVIEW = "1"
 
+# nushell skips /etc/profile, where NixOS sets this; bknix php-fpm passes it to Nix's libcurl
+$env.NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt"
+
 # ------------------------------------------------------------ completions ---
 
 # Generated per machine so they track the installed binary, like the starship
