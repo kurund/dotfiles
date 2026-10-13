@@ -1,0 +1,13 @@
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+continue-comments = false
+end-of-line-diagnostics = "disable"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.inline-diagnostics]
+cursor-line = "disable"
+

@@ -1,0 +1,29 @@
+# LSP settings
+[language-server.phpactor]
+# phpactor config isn't shell expanded, so the $HOME based path is passed on the command line
+command = "sh"
+args = [ "-c", '''exec phpactor language-server --config-extra "{\"php_code_sniffer.bin\": \"$HOME/.config/helix/phpcs.php\"}"''' ]
+
+[language-server.phpactor.config]
+"php_code_sniffer.enabled" = true
+
+[[language]]
+name = "php"
+language-servers = [ "phpactor" ]
+auto-format = true
+# phpcbf exits 1 when it fixed something and 2 when some errors remain, Helix rejects any non-zero exit
+formatter = { command = "sh", args = [ "-c", "$HOME/.config/composer/vendor/bin/phpcbf -q -; [ $? -le 2 ]" ] }
+
+[language.debugger]
+name = "php-debug"
+transport = "stdio"
+command = "sh"
+args = [ "-c", 'exec node "$HOME/.config/helix/php-debug.js"' ]
+
+[[language.debugger.templates]]
+name = "PHP debugging"
+request = "launch"
+completion = []
+args = {}
+
+

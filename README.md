@@ -24,6 +24,7 @@ and run `./bootstrap.sh`.
 
 - Nushell shell + Starship prompt
 - NeoVim editor
+- Helix editor
 - Jujutsu (jj) + side-by-side diffs via [delta](https://github.com/dandavison/delta)
 - Tmux multiplexer
 - Kitty / Ghostty / Wezterm terminals

@@ -43,6 +43,7 @@ fi
 PKGS=(
   "fuzzel:fuzzel"
   "ghostty:ghostty"
+  "helix:hx helix"
   "herdr:herdr"
   "jj:jj"
   "kitty:kitty"
