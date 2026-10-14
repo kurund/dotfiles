@@ -81,7 +81,10 @@ let has_carapace = (which carapace | is-not-empty)
 if not ($carapace_init | path exists) or ($has_carapace and (open --raw $carapace_init | is-empty)) {
     mkdir ($carapace_init | path dirname)
     if $has_carapace {
-        carapace _carapace nushell | save -f $carapace_init
+        # nushell 0.116 deprecated positional completer input; carapace 1.7.3 still emits it
+        carapace _carapace nushell
+        | str replace '{|spans|' "{|place|\n  let spans = $place.command"
+        | save -f $carapace_init
     } else {
         "" | save -f $carapace_init
     }
