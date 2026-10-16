@@ -397,15 +397,16 @@ vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "none" })
 vim.keymap.set("n", "<leader>ff", function()
 	require("fzf-lua").files({
 		no_ignore = true,
+		cwd_prompt = false,
 		fd_opts = "--color=never --type f --type l --exclude .git --exclude .jj --exclude node_modules"
 			.. " --exclude '**/wp-content/uploads' --exclude '**/sites/*/files'",
 	})
 end, { desc = "Files (incl. ignored)" })
 vim.keymap.set("n", "<leader>fF", function()
-	require("fzf-lua").files({ no_ignore = true })
+	require("fzf-lua").files({ no_ignore = true, cwd_prompt = false })
 end, { desc = "Files (everything)" })
 vim.keymap.set("n", "<leader>fg", function()
-	require("fzf-lua").live_grep()
+	require("fzf-lua").live_grep({ prompt = "> " })
 end, { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>fb", function()
 	require("fzf-lua").buffers()
