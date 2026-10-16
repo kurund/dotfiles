@@ -1,0 +1,9 @@
+{
+  "CiviCRM log variable": {
+    "prefix": "clog",
+    "body": [
+      "\\\\Civi::log()->debug('${1:var}', ['${1:var}' => \\$${1:var}]);$0"
+    ],
+    "description": "Log a variable to the CiviCRM log file"
+  }
+}
