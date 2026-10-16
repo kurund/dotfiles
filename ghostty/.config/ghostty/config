@@ -19,3 +19,4 @@ cursor-style = block
 cursor-style-blink = true
 theme = noctalia
 macos-option-as-alt = left
+adjust-cursor-thickness = 2
