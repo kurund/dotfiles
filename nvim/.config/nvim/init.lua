@@ -65,16 +65,10 @@ vim.opt.concealcursor = ""
 vim.opt.synmaxcol = 300
 vim.opt.fillchars = { eob = " " } -- hide "~" on empty lines
 
-local undodir = vim.fn.expand("~/.vim/undodir")
-if vim.fn.isdirectory(undodir) == 0 then
-	vim.fn.mkdir(undodir, "p")
-end
-
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
 vim.opt.undofile = true
-vim.opt.undodir = undodir
 vim.opt.updatetime = 300
 vim.opt.timeoutlen = 500
 vim.opt.ttimeoutlen = 50
