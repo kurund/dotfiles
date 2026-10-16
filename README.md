@@ -79,11 +79,3 @@ split, use a conditional scope in `config.toml` instead:
 [--scope.user]
 email = "work@example.com"
 ```
-
-### Past configs
-
-- Sway, Hyprland
-- Waybar, swaync, swaylock, wlogout, rofi, DankMaterialShell
-- greetd + ReGreet login screen
-- Helix editor, cava
-- Zellij multiplexer
