@@ -2,7 +2,7 @@ vim.loader.enable()
 
 vim.opt.termguicolors = true
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("habamax")
 
 local function set_transparent()
 	local groups = {
@@ -239,7 +239,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- ftplugins set formatoptions after init.lua, so this has to run on FileType
 vim.api.nvim_create_autocmd("FileType", {
 	group = augroup,
 	desc = "No comment continuation on new lines",
