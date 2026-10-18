@@ -419,6 +419,12 @@ end, { desc = "Diagnostics Document" })
 vim.keymap.set("n", "<leader>fX", function()
 	require("fzf-lua").diagnostics_workspace()
 end, { desc = "Diagnostics Workspace" })
+vim.keymap.set("n", "<leader>gs", function()
+	require("fzf-lua").git_status()
+end, { desc = "Git status (changed files)" })
+vim.keymap.set("n", "<leader>gh", function()
+	require("fzf-lua").git_hunks()
+end, { desc = "Git diff (all hunks)" })
 
 require("mini.ai").setup({})
 require("mini.comment").setup({
