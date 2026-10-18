@@ -423,7 +423,7 @@ vim.keymap.set("n", "<leader>gs", function()
 	require("fzf-lua").git_status()
 end, { desc = "Git status (changed files)" })
 vim.keymap.set("n", "<leader>gh", function()
-	require("fzf-lua").git_hunks()
+	require("fzf-lua").git_hunks({ ref = "HEAD" })
 end, { desc = "Git diff (all hunks)" })
 
 require("mini.ai").setup({})
