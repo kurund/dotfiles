@@ -374,6 +374,9 @@ local function load_nvim_tree()
 		renderer = {
 			group_empty = true,
 		},
+		update_focused_file = {
+			enable = true,
+		},
 	})
 end
 
@@ -384,7 +387,7 @@ end
 
 vim.keymap.set("n", "<leader>e", function()
 	load_nvim_tree()
-	require("nvim-tree.api").tree.toggle()
+	require("nvim-tree.api").tree.toggle({ find_file = true })
 end, { desc = "Toggle NvimTree" })
 
 vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })
