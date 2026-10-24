@@ -22,7 +22,8 @@ and run `./bootstrap.sh`.
 
 ### Current setup
 
-- Nushell shell + Starship prompt
+- Zsh shell (login shell) + Starship prompt
+- Nushell shell
 - NeoVim editor
 - Helix editor
 - Jujutsu (jj) + side-by-side diffs via [delta](https://github.com/dandavison/delta)
@@ -31,6 +32,14 @@ and run `./bootstrap.sh`.
 - niri (Wayland compositor) + Noctalia shell
 - Fuzzel launcher
 - Herdr multiplexer
+
+### Zsh
+
+`zsh/.zshrc` holds history settings, PATH additions (`~/.local/bin`, asdf
+shims, cargo, pnpm, `/usr/local/bin` for buildkit's `use-bknix`) and
+`NIX_SSL_CERT_FILE`, which NixOS doesn't set for zsh. Plugins
+(autosuggestions, syntax highlighting), aliases, starship, zoxide and fzf are
+enabled system-wide in the NixOS config, not here.
 
 ### Nushell
 

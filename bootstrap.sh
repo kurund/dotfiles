@@ -55,6 +55,7 @@ PKGS=(
   "starship:starship"
   "tmux:tmux"
   "wezterm:wezterm"
+  "zsh:zsh"
 )
 
 detected() {
