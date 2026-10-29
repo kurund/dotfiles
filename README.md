@@ -36,11 +36,15 @@ and run `./bootstrap.sh`.
 
 ### Zsh
 
-`zsh/.zshrc` holds history settings, PATH additions (`~/.local/bin`, asdf
-shims, cargo, pnpm, `/usr/local/bin` for buildkit's `use-bknix`) and
-`NIX_SSL_CERT_FILE`, which NixOS doesn't set for zsh. Plugins
-(autosuggestions, syntax highlighting), aliases, starship, zoxide and fzf are
-enabled system-wide in the NixOS config, not here.
+`zsh/.zshrc` is shared between macOS and NixOS. Aliases and common exports sit
+at the top, followed by a per-OS block:
+
+- macOS: starship, the Homebrew autosuggestions/syntax-highlighting plugins,
+  iTerm2 integration, Android SDK, conda, nvm and composer.
+- NixOS: history settings, PATH additions (`~/.local/bin`, asdf shims, cargo,
+  pnpm, `/usr/local/bin` for buildkit's `use-bknix`) and `NIX_SSL_CERT_FILE`,
+  which NixOS doesn't set for zsh. Plugins, starship, zoxide and fzf are
+  enabled system-wide in the NixOS config, not here.
 
 ### Nushell
 
