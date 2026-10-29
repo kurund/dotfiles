@@ -32,6 +32,7 @@ and run `./bootstrap.sh`.
 - niri (Wayland compositor) + Noctalia shell
 - Fuzzel launcher
 - Herdr multiplexer
+- Rex terminal
 
 ### Zsh
 

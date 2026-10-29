@@ -51,6 +51,7 @@ PKGS=(
   "niri:niri"
   "noctalia:noctalia"
   "nushell:nu"
+  "rex:rex"
   "rofi:rofi"
   "starship:starship"
   "tmux:tmux"
