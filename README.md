@@ -40,7 +40,7 @@ and run `./bootstrap.sh`.
 at the top, followed by a per-OS block:
 
 - macOS: starship, the Homebrew autosuggestions/syntax-highlighting plugins,
-  iTerm2 integration, Android SDK, conda, nvm and composer.
+  Android SDK, conda, nvm and composer.
 - NixOS: history settings, PATH additions (`~/.local/bin`, asdf shims, cargo,
   pnpm, `/usr/local/bin` for buildkit's `use-bknix`) and `NIX_SSL_CERT_FILE`,
   which NixOS doesn't set for zsh. Plugins, starship, zoxide and fzf are
