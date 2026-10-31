@@ -23,9 +23,16 @@ local function set_transparent()
 		vim.api.nvim_set_hl(0, g, { bg = "none" })
 	end
 	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "none", fg = "#767676" })
+	vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NvimTreeSignColumn", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#2a2a2a", bg = "none" })
 end
 
-set_transparent()
+if vim.fn.has("mac") == 0 then
+	set_transparent()
+end
 
 -- ============================================================================
 -- OPTIONS
@@ -389,13 +396,6 @@ vim.keymap.set("n", "<leader>e", function()
 	load_nvim_tree()
 	require("nvim-tree.api").tree.toggle({ find_file = true })
 end, { desc = "Toggle NvimTree" })
-
-vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-vim.api.nvim_set_hl(0, "NvimTreeSignColumn", { bg = "none" })
-vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#2a2a2a", bg = "none" })
-vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "none" })
 
 vim.keymap.set("n", "<leader>ff", function()
 	require("fzf-lua").files({
