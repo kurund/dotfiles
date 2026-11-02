@@ -247,13 +247,13 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-	group = augroup,
-	desc = "No comment continuation on new lines",
-	callback = function()
-		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	group = augroup,
+-- 	desc = "No comment continuation on new lines",
+-- 	callback = function()
+-- 		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+-- 	end,
+-- })
 
 -- ============================================================================
 -- PLUGINS (vim.pack)
