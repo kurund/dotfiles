@@ -8,3 +8,5 @@ rex.bind("cmd+alt+s", "session.rename")
 
 rex.bind("cmd+alt+n", "session.next")
 rex.bind("cmd+alt+p", "session.previous")
+
+rex.bind("cmd+alt+z", "pane.zoom")
